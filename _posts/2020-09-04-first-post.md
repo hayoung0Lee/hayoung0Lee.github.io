@@ -1,6 +1,6 @@
 ---
 title: "Welcome to My blog!"
-date: 2017-10-20 08:26:28 -0400
+date: {{ page.last-modified-date | date: '%B %d, %Y' }}
 categories: jekyll update
 ---
 
