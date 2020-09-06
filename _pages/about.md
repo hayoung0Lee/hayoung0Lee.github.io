@@ -20,7 +20,7 @@ blog link
 
 ### my projects
 
-| New Projects 09.2020 ~ | More projects are coming!!! | 
+| New Projects 09.2020 | More projects are coming!!! | 
 
 | Projects   ~   08.2020 | <a href="/portfolio/2020-09-06-React-and-Django/"> React-and-Django-template project</a> <br/> <a href="/portfolio/2020-09-06-pyinstaller-pj/"> Pyinstaller project </a> |
 
