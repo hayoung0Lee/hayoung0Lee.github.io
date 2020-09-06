@@ -20,7 +20,10 @@ github link
 
 ### my projects
 <ul>
-  <li>pj 1</li>
+  <li><a href="/portfolio/2020-09-06-React-and-Django/">React-and-Django-template project</a></li>
+  <li><a href="/portfolio/2020-09-06-pyinstaller-pj/">Pyinstaller project</a></li>
+  <li><a href="/portfolio/2020-09-06-react-native-app/">React Native App project</a></li>
+  <li><a href="/portfolio/2020-09-06-movie-project/">Database design for movie theatre projecta></li>
   <li><a href="/portfolio/2020-09-06-kakaochatbot/">kakaotalk chatbot</a></li>
 </ul>
 
