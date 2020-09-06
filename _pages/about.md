@@ -21,7 +21,7 @@ github link
 ### my projects
 <ul>
   <li>pj 1</li>
-  <li>pj 2</li>
+  <li><a href="/portfolio/2020-09-06-kakaochatbot/">kakaotalk chatbot</a></li>
 </ul>
 
 ## Stack
