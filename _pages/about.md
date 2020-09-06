@@ -16,7 +16,7 @@ soon
 blog link
 
 ## Github 
-github link: https://github.com/hayoung0Lee
+<a href="https://github.com/hayoung0Lee">Visit my github</a>
 
 ### my projects
 |Category|links|
