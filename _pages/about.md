@@ -15,8 +15,8 @@ soon
 ## Blog
 blog link
 
-## Gitgub 
-github link
+## Github 
+github link: https://github.com/hayoung0Lee
 
 ### my projects
 <ul>
@@ -33,5 +33,5 @@ Language <br/>
 ETC <br/>
 
 ## Contact
-Anytime
+Please contact me anytime: hayoung0.lee@gmail.com
 
