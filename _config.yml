@@ -273,7 +273,7 @@ compress_html:
 defaults:
   # _posts
   - scope:
-      path: "_posts"
+      path: ""
       type: posts
     values:
       layout: single
@@ -285,8 +285,8 @@ defaults:
       
   # _portfolio
   - scope:
-      path: "_portfolio"
-      type: posts
+      path: ""
+      type: portfolio
     values:
       layout: single
       author_profile: true
