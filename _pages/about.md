@@ -19,13 +19,12 @@ blog link
 github link: https://github.com/hayoung0Lee
 
 ### my projects
-<ul>
-  <li><a href="/portfolio/2020-09-06-React-and-Django/">React-and-Django-template project</a></li>
-  <li><a href="/portfolio/2020-09-06-pyinstaller-pj/">Pyinstaller project</a></li>
-  <li><a href="/portfolio/2020-09-06-react-native-app/">React Native App project</a></li>
-  <li><a href="/portfolio/2020-09-06-movie-project/">Database design for movie theatre project</a></li>
-  <li><a href="/portfolio/2020-09-06-kakaochatbot/">kakaotalk chatbot</a></li>
-</ul>
+|Category|links|
+|---|---|
+|New Projects|More projects are coming!!! |
+|Projects as a student| <ol><li><a href="/portfolio/2020-09-06-React-and-Django/">React-and-Django-template project</a></li> <li><a href="/portfolio/2020-09-06-pyinstaller-pj/">Pyinstaller project</a></li> <li><a href="/portfolio/2020-09-06-react-native-app/">React Native App project</a></li> <li><a href="/portfolio/2020-09-06-movie-project/">Database design for movie theatre project</a></li><li><a href="/portfolio/2020-09-06-kakaochatbot/">kakaotalk chatbot</a></li></ol>|
+
+
 
 ## Stack
 Frameworks <br/>
