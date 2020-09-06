@@ -1,5 +1,5 @@
 # hayoung0Lee.github.io
-My Github Blog
+My Github Blog: https://hayoung0lee.github.io/
 
 ## My jekyll theme
 https://github.com/mmistakes/minimal-mistakes
