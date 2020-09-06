@@ -25,4 +25,4 @@ sidebar:
 
 This is a kakotalk chatbot project
 
-Here is the github repository: https://github.com/hayoung0Lee/kakao_chatbot
+Here is the github repository: <a href="https://github.com/hayoung0Lee/kakao_chatbot">https://github.com/hayoung0Lee/kakao_chatbot</a>
