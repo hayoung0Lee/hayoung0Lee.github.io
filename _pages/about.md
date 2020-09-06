@@ -1,4 +1,5 @@
 ---
+title: 'Hi, I am Hayoung Lee'
 permalink: /about/
 entries_layout: grid
 author_profile: true
