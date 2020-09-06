@@ -25,6 +25,16 @@ blog link
 |Projects as a student| <ol><li><a href="/portfolio/2020-09-06-React-and-Django/">React-and-Django-template project</a></li> <li><a href="/portfolio/2020-09-06-pyinstaller-pj/">Pyinstaller project</a></li> <li><a href="/portfolio/2020-09-06-react-native-app/">React Native App project</a></li> <li><a href="/portfolio/2020-09-06-movie-project/">Database design for movie theatre project</a></li><li><a href="/portfolio/2020-09-06-kakaochatbot/">kakaotalk chatbot</a></li></ol>|
 
 
+| Header1 | Header2 | Header3 |
+|:--------|:-------:|--------:|
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|----
+| cell1   | cell2   | cell3   |
+| cell4   | cell5   | cell6   |
+|=====
+| Foot1   | Foot2   | Foot3
+
 
 ## Stack
 Frameworks <br/>
