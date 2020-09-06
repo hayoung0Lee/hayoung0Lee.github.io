@@ -281,7 +281,7 @@ collections:
 defaults:
   # _posts
   - scope:
-      path: "_posts"
+      path: "/about/"
       type: posts
     values:
       layout: single
