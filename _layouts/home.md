@@ -35,4 +35,12 @@ feature_row:
     btn_label: "Learn more"      
 ---
 
-???
+Hayoung Lee, 
+Hi, all. Thank you for visiting my blog.
+
+<p> go to about page for more information about me </p>
+<p> check portfolio tab to check my portfolio. Recenlty I made a new github account to manage my projects better. </p>
+<p> my main interest is Javascript, and Backend. But I am using React/Typescript a lot at my work. So I am going to post what I know about javascript </p>
+
+Thank you.
+
