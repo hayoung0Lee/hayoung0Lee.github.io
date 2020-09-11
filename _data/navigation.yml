@@ -3,5 +3,7 @@ main:
     url: /about/
   - title: "Portfolio"
     url: /portfolio/
+  - title: "Algorithm"
+    url: /algorithm/
   - title: "Posts"
     url: /posts/
