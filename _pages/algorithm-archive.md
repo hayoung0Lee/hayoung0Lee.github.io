@@ -7,4 +7,4 @@ entries_layout: default
 classes: wide
 ---
 
-My algorithm lists!
+My algorithm lists! Visit <a href="https://mytutorials.tistory.com/category/Core/Weekly%20Algorithm">my blog</a> for more information
