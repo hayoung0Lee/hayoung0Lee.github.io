@@ -3,7 +3,7 @@ module.exports = {
     title: "My Gatsby Site",
   },
   plugins: [
-    "gatsby-plugin-netlify-cms",
+    // "gatsby-plugin-netlify-cms",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
@@ -32,5 +32,13 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown-pages`,
+        path: `./src/markdown-pages`,
+      },
+    },
+    `gatsby-transformer-remark`,
   ],
 };

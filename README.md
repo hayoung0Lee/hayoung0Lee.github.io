@@ -1,6 +1,6 @@
 # Github blog
 
-# How to Start Gatsby Github blog
+## How to Start Gatsby Github blog
 
 ```
 gatsby new # Start Project, Select Options
@@ -25,6 +25,10 @@ npm run deploy
 So, do something in your develop branch and `npm run deploy` will make change into the master branch.
 
 - [reference](https://m.blog.naver.com/lyshyn/221527017383)
+
+## How to add Markdown file
+
+[Follow this link](https://www.gatsbyjs.com/docs/how-to/routing/adding-markdown-pages/)
 
 ## References
 
