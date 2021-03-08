@@ -3,7 +3,6 @@ module.exports = {
     title: "My Gatsby Site",
   },
   plugins: [
-    // "gatsby-plugin-netlify-cms",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
     "gatsby-plugin-react-helmet",
