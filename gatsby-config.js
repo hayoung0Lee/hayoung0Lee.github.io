@@ -8,7 +8,7 @@ module.exports = {
       },
       {
         name: "JavaScript",
-        link: "/js",
+        link: "/javascript",
       },
     ],
   },

@@ -4,7 +4,9 @@ import Layout from "../components/layout";
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/markdown-pages/javascript/" } }
+    ) {
       nodes {
         frontmatter {
           title
@@ -18,10 +20,11 @@ export const query = graphql`
 `;
 
 // markup
-const IndexPage = ({ data }) => {
+const JavaScriptPage = ({ data }) => {
+  console.log(data);
   return (
     <Layout>
-      <h3>전체글을 보여줄까 고민중인 페이지</h3>
+      <h3>JavaScript Page</h3>
       <ul>
         {data.allMarkdownRemark.nodes.map((d, id) => {
           return (
@@ -35,4 +38,4 @@ const IndexPage = ({ data }) => {
   );
 };
 
-export default IndexPage;
+export default JavaScriptPage;
