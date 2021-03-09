@@ -23,6 +23,13 @@ const BlogHeader = styled.div`
   }
 `;
 
+const MarkDownStyle = styled.div`
+  & > h3 {
+    margin-top: 60px;
+    border-bottom: 1px solid black;
+  }
+`;
+
 function formatDate(date) {
   var d = new Date(date),
     month = "" + (d.getMonth() + 1),
@@ -52,7 +59,7 @@ export default function Template({
           <p>Modified: {formatDate(modifiedTime)}</p>
         </div>
       </BlogHeader>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <MarkDownStyle dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
 }
