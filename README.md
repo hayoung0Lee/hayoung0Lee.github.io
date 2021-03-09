@@ -1,5 +1,7 @@
 # Github blog
 
+[Visit My blog](https://hayoung0lee.github.io/)
+
 ## How to Start Gatsby Github blog
 
 ```
@@ -29,6 +31,10 @@ So, do something in your develop branch and `npm run deploy` will make change in
 ## How to add Markdown file
 
 [Follow this link](https://www.gatsbyjs.com/docs/how-to/routing/adding-markdown-pages/)
+
+## How to use siteMetaData
+
+[Follow this link](https://www.gatsbyjs.com/docs/creating-dynamic-navigation/#viewing-the-sitemetadata-in-graphql)
 
 ## References
 

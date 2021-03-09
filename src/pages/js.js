@@ -6,7 +6,7 @@ import Layout from "../components/layout";
 const IndexPage = () => {
   return (
     <Layout>
-      <div>전체글을 보여줄까 고민중인 페이지</div>
+      <div>JavaScript Page</div>
       <p>
         JavaScript 개념 정리 <Link to="/blog/js-concept">읽기</Link>!
       </p>

@@ -1,6 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: "My Gatsby Site",
+    title: "Hayoung's Memo",
+    menuLinks: [
+      {
+        name: "home",
+        link: "/",
+      },
+      {
+        name: "JavaScript",
+        link: "/js",
+      },
+    ],
   },
   plugins: [
     "gatsby-plugin-styled-components",
