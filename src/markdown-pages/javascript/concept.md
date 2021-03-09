@@ -8,3 +8,7 @@ title: "JavaScript 개념 정리"
 수정 수정
 
 더 수정 더수정
+
+```javascript
+let i = 123;
+```
