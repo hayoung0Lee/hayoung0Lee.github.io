@@ -28,10 +28,13 @@ const Layout: FC<React.ReactNode> = ({ children }) => {
   return (
     <Container>
       <Helmet
-        title={"title"}
+        title={data.site.siteMetadata.title}
         meta={[
-          { name: "description", content: "Sample" },
-          { name: "keywords", content: "sample, something" },
+          { name: "description", content: "Hayoung's Memo blog" },
+          {
+            name: "keywords",
+            content: "Javascript,React,Gatsby,Next.js,junior",
+          },
         ]}
       ></Helmet>
       <Header

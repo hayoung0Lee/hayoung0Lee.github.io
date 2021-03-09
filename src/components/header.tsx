@@ -12,7 +12,6 @@ const HeaderStyle = styled.header`
 `;
 
 const Header: FC<HeaderProps> = ({ menuLinks, siteTitle }) => {
-  console.log(menuLinks, siteTitle);
   return (
     <HeaderStyle>
       <h1 style={{ margin: 0, flex: 1 }}>

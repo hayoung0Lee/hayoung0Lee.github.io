@@ -21,7 +21,6 @@ export const query = graphql`
 
 // markup
 const JavaScriptPage = ({ data }) => {
-  console.log(data);
   return (
     <Layout>
       <h3>JavaScript Page</h3>
