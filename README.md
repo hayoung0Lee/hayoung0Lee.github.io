@@ -2,6 +2,44 @@
 
 [Visit My blog](https://hayoung0lee.github.io/)
 
+## How to use
+
+```javascript
+// Inside gatsby-config.js, Add Menulinks. I added JavaScript menu to make 'JavaScript Menu'
+menuLinks: [
+    {
+    name: "home",
+    link: "/",
+    },
+    {
+    name: "JavaScript",
+    link: "/javascript",
+    },
+],
+
+// Make javaScript folder inside markdown-pages folder, and Write your file
+
+// make JavaScript Page inside pages folder
+
+// In JavaScript page component, used regext to search markdown files
+export const query = graphql`
+  {
+    allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/markdown-pages/javascript/" } }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          slug
+          date
+        }
+        fileAbsolutePath
+      }
+    }
+  }
+`;
+```
+
 ## How to Start Gatsby Github blog
 
 ```
