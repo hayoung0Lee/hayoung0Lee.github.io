@@ -110,6 +110,63 @@ let c = function d() {}; // 이렇게도 된다
 
 - `let, const` 키워드를 쓰면 다른 언어와 같이 block단위의 스코핑을 지원하는데 var를 쓰면 함수단위로 스코핑한다. let, const를 사용하자
 
+### this
+
+JavaScript에서 제일이해안되던 `this`. 지금도 딱히 잘되진 않는데 다시한번 정리
+
+- JavaScript에서 `this는 실행 컨텍스트가 생성될때, 즉 함수가 호출될때` 생성된다
+
+  - 그래서 함수 호출 방식에 따라 `this 가 뭔지 달라진다`
+
+- 전역 공간에서의 this:
+
+  - window, 또는 global
+  - 전역 컨텍스트를 생성하는 주체는 전역객체라고 정의되어있음
+
+- 함수로 호출하거나 메서드로 호출할때의 this
+
+  - 함수로 호출하면 `호출한 실행컨텍스트가 this`: 지정을 안하면 global/window다
+  - 메서드로 호출하면 `.앞에 붙어있는 객체 명이 this`: 호출 주체는 .앞에 있는거
+
+    ```javascript
+    let func = function (x) {
+      console.log(this, x);
+    };
+
+    func(1); // 함수로 호출한것, 이때 생성되는 실행 컨텍스트 내의 this는 별도로 지정을 안해주면 window/global이다
+
+    let obj = {
+      method: func,
+    };
+    obj.method(1); // 이렇게 .앞에 있는게 메소드로 호출한 것, 이때의 생성되는 실행 컨텍스트 내의 this는 obj이다.
+    ```
+
+- 함수 호출방식을 할때 this가 전역객체가 되는 문제
+
+  - 일단 좀 뭔가 이상한것같다.
+  - 그래서 이걸 해결하는 방법들이 있다(메서드 내에서 함수 호출을 할때 this가 전역객체가 되는 문제를 해결)
+  - 호출 주체가 엇을때 호출하는 주변환경의 this(호출한 실행컨택스트의 this)를 상속받는 방법
+
+    - `ES6`: arrow 함수는 this를 아예 바인딩을 안해서, 객체를 타고 올라가서 상위의 this를 사용할 수 있게된다.(this 가 아예 없는 것)
+
+    ```javascript
+    let obj = {
+      outer: function () {
+        console.log("outer의 this", this); // 이 this를 기억해보자!
+
+        let innerFunc = () => {
+          console.log("innerFunc의 this", this); // 얘도!!
+        };
+
+        innerFunc(); // 얘는 arrow function 이라 아예 this를 바인딩 자체를 안한다. 그러면 innerFunc의 실행 컨텍스트 내에서 this를 호출하면 없으니까, innerFunc를 호출한 outer 객체를 참조하고 여기의 this값을 그대로 읽어올 수 있다.
+      },
+    };
+
+    obj.outer();
+    ```
+
+  - 명시적으로 `call, apply, bind` 함수로 명시적으로 this를 지정할 수 있다
+
 ### Reference
 
 - [코어 자바스크립트 책](http://www.yes24.com/Product/Goods/78586788?OzSrank=1)
