@@ -166,6 +166,25 @@ JavaScript에서 제일이해안되던 `this`. 지금도 딱히 잘되진 않는
     ```
 
   - 명시적으로 `call, apply, bind` 함수로 명시적으로 this를 지정할 수 있다
+  - [call vs apply vs bind](https://stackoverflow.com/questions/15455009/javascript-call-apply-vs-bind#:~:text=Call%20invokes%20the%20function%20and,and%20any%20number%20of%20arguments.)
+    - call, apply: 즉시 호출
+    - bind: 새로운 함수를 만들기만 함
+
+### Callback 함수
+
+- 인자로 넘겨지는 함수
+- 넘겨받은 함수에서 언제 실행할지 제어한다.
+- 이를 통해 비동기처리같은걸 하곤한다
+- 특별한 경우말고는 콜백 함수는 함수이기때문에 별다른 지정을 안하면 this가 전역객체가 된다
+
+### 콜백지옥과 비동기 제어
+
+- 동기적인 코드는 현재 실행중인거 하고, 다음거 하는 것
+- 비동기적: 뭔 이유에선가 코드가 완료되던 말던 다음코드로 넘어가는건데, 대부분 cpu 계산시간이 길거나, 이벤트가 발생하거나 하는거를 처리할때 비동기적으로 처리한다
+- 비동기 제어를 위해 `ES6에서 Promise/Generator` 가 도입, `ES2017에서는 async/await`가 도입됬다
+- [mdn promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [promise 읽어보기](https://ko.javascript.info/promise-basics)
+  - promise.then은 또다른 promise를 반환하기 때문에 chaining 할수있다. 아니면 그 내에서 아예 새로운 promise를만들어도 된다. 값을 반환하더라고 Promise.resolve(1) 이런식으로 반환된단 말
 
 ### Reference
 
