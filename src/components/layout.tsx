@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "./header";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
+import "./layout.css";
 
 const Container = styled.div`
   width: 80vw;
