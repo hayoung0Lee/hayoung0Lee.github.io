@@ -28,6 +28,12 @@ const MarkDownStyle = styled.div`
     margin-top: 60px;
     border-bottom: 1px solid black;
   }
+
+  & > blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: 0.25em solid #dfe2e5;
+  }
 `;
 
 function formatDate(date) {

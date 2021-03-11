@@ -186,6 +186,48 @@ JavaScript에서 제일이해안되던 `this`. 지금도 딱히 잘되진 않는
 - [promise 읽어보기](https://ko.javascript.info/promise-basics)
   - promise.then은 또다른 promise를 반환하기 때문에 chaining 할수있다. 아니면 그 내에서 아예 새로운 promise를만들어도 된다. 값을 반환하더라고 Promise.resolve(1) 이런식으로 반환된단 말
 
+### 클로저
+
+- 어떤함수에서 선언한 변수를 참조하는 내부함수에서 발생하는 현상. 외부함수를 lexical environment의 outerEnvironmentReference를 통해서 접근할 수 있는데, 이렇게 참조하는 변수는 내부함수에서 사용하는 동안은 외부함수의 실행컨텍스트가 지워질때도 가비지 콜렉터가 정리하지 않기 때문에 일어나는 일
+
+> 클로저란
+> 어떤 함수 A에서 선언한 변수 a를 참조하는 내부함수 B를 외부로 전달할 경우 A의 실행 컨텍스트가 종료된 이후에도 a가 사라지지 않는 현상
+
+```javascript
+let outer = (function () {
+  let a = 1;
+  let inner = function () {
+    return ++a;
+  };
+  return inner;
+})();
+
+console.log(outer());
+console.log(outer());
+outer = null; //참조를 끊으면 갈비지 콜렉팅 당함
+```
+
+### 커링 함수(currying function)
+
+- 여러개의 인자를 받는 함수를 하나의 인자만 받는 함수로 나눠서 순차적으로 호출될 수 있게 체인 형태로 구성
+
+```javascript
+let curry3 = function (func) {
+  return function (a) {
+    return function (b) {
+      return func(a, b);
+    };
+  };
+};
+
+let getMaxWith = curry3(Math.max)(10);
+console.log(getMathWith(8));
+```
+
+- 필요한 인자 개수만큼 함수를 만들어서 리턴해주면서 사용이 가능해서, 직접 만들어 쓰기 좋음
+- `지연 실행 lazy execution`: 당장 필요한 ㅂ정보만 받아서 전달하다가 마지막인자가 넘어갈때까지 실행을 미루는 것이 됨
+- 클로저는 본질적으로 메모리를 계속 차지하는 개념이므로 더는 사용하지 않게 된 클로저에 대해서는 메모리를 차지하지 않도록 관리해줘야한다.
+
 ### Reference
 
 - [코어 자바스크립트 책](http://www.yes24.com/Product/Goods/78586788?OzSrank=1)
