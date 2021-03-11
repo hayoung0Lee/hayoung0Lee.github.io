@@ -228,6 +228,44 @@ console.log(getMathWith(8));
 - `지연 실행 lazy execution`: 당장 필요한 ㅂ정보만 받아서 전달하다가 마지막인자가 넘어갈때까지 실행을 미루는 것이 됨
 - 클로저는 본질적으로 메모리를 계속 차지하는 개념이므로 더는 사용하지 않게 된 클로저에 대해서는 메모리를 차지하지 않도록 관리해줘야한다.
 
+### 프로토타입
+
+> 프로토타입 기반 언어란?
+> 원형객체(prototype)을 복제해서 상속효과를 가지는 언어
+
+```javascript
+let instance = new Constructor();
+```
+
+1. 어떤 생성자 함수를 `new`와 함께 호출하면 Constructor를 기반으로 새로운 인스턴스가 생성된다
+2. 이때 instance에 `__proto__`라는 프로퍼티가 자동으로 부여되고 이는 Constructor의 `prototype` 프로퍼티를 참조한다
+
+![prototype](../../markdown-images/prototype.png)
+
+```javascript
+let Person = function (name) {
+  this._name = name;
+};
+
+Person.prototype.getName = function () {
+  return this._name;
+}; // prototype에 정의되서 instance에서 __proto__를 통해서 접근할 수 있는 내용이 된다, __proto__는 생략도 된다
+
+Person.__proto__.name; // undefiend이다. this가 Person.__proto__를 가리키기 때문
+Person.name; // 이렇게 __proto__ 생략가능하다
+```
+
+> 생성자 함수의 prototype에 어떤 메서드다 프로퍼티가 있다면 인스턴스에서도 마치 자신의 것처럼 해당 메서드나 프로퍼티에 접근할 수 있게 된다.
+
+- `prototype` 객체 내부에는 `constructor`라고 생성자가 자기 자신을 가리키는게 있다. `__proto__` 도 prototype을 참조하니까 , 여기서도 볼수있다.이게 있는 이유는 인스턴스로 부터 `원형`, 어떤 생성자로부터 생성되었는지를 파악하기 위해서이다.
+  - 근데 이 `constructor`는 변경이 가능하기때문에 여기에 의존하는 것은 좋지 않다. 그래도 얘가 원형을 알아내는 유일한 방법이다
+
+### 프로토타입 체인
+
+> 어떤 데이터의 `__proto__` 프로퍼티 내부에 다시 `__proto__` 프로퍼티가 연쇄적으로 이어진 것을 프로토타입 체인이라고 하고, 이를 따라가며 검색하는 것을 포로토타입 체이닝이라고 한다.
+
+- Object에서필요한 기능을 prototype에 정의해놓으면, 모든 것이 객체라 프로토타입 체이닝을 통해 object가 아닌애들까지 해당 기능에 접근할 수 잇게 되버린다. 그래서 `객체 전용 메서드는 Object 함수에 static하게 담겨있다`. 그래서 `Object.method(인스턴스)` 이렇게 쓰도록 되어있다.
+
 ### Reference
 
 - [코어 자바스크립트 책](http://www.yes24.com/Product/Goods/78586788?OzSrank=1)
