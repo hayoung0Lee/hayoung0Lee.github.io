@@ -83,6 +83,10 @@ So, do something in your develop branch and `npm run deploy` will make change in
 
 [spoca han sans](https://spoqa.github.io/spoqa-han-sans/ko-KR/#header)
 
+## Add github readme style
+
+https://github.com/sindresorhus/github-markdown-css
+
 ## References
 
 https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/

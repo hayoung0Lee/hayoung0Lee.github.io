@@ -5,10 +5,11 @@ import { Link } from "gatsby";
 
 const HeaderStyle = styled.header`
   border: 1px solid black;
-  height: 60px;
+  min-height: 60px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 `;
 
 const Header: FC<HeaderProps> = ({ menuLinks, siteTitle }) => {

@@ -2,12 +2,15 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import styled from "styled-components";
+import "./blogTemplate.css";
 
 const BlogHeader = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  min-height: 50px;
   align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
 
   & > div {
     display: flex;
@@ -16,25 +19,14 @@ const BlogHeader = styled.div`
 
     & > p {
       margin: 0px;
-      height: 20px;
+      min-height: 20px;
       display: flex;
       align-items: center;
     }
   }
 `;
 
-const MarkDownStyle = styled.div`
-  & > h3 {
-    margin-top: 60px;
-    border-bottom: 1px solid black;
-  }
-
-  & > blockquote {
-    padding: 0 1em;
-    color: #6a737d;
-    border-left: 0.25em solid #dfe2e5;
-  }
-`;
+const MarkDownStyle = styled.div``;
 
 function formatDate(date) {
   var d = new Date(date),
@@ -65,7 +57,10 @@ export default function Template({
           <p>Modified: {formatDate(modifiedTime)}</p>
         </div>
       </BlogHeader>
-      <MarkDownStyle dangerouslySetInnerHTML={{ __html: html }} />
+      <MarkDownStyle
+        className="markdown-body"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </Layout>
   );
 }
