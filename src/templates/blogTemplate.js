@@ -26,7 +26,14 @@ const BlogHeader = styled.div`
   }
 `;
 
-const MarkDownStyle = styled.div``;
+const MarkDownStyle = styled.div`
+  // custom style
+  & > h3 {
+    border-bottom: 1px solid rgba(27, 31, 35, 0.1);
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+`;
 
 function formatDate(date) {
   var d = new Date(date),

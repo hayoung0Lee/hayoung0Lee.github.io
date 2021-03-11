@@ -3,7 +3,7 @@ slug: "/javascript/keywords"
 title: "JavaScript Keywords 정리"
 ---
 
-## Keywords
+<!-- ## Keywords -->
 
 ### 기본형 타입 vs 참조형 타입
 
