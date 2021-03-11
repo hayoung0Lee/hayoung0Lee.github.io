@@ -31,9 +31,15 @@ jobs:
           GITHUB_ACTOR: ${{ github.actor}}
           GITHUB_EMAIL: ${{ github.event.commits[0].committer.email}} #FIXME
         run: |
-          echo "GITHUB_EMAIL => $GITHUB_EMAIL"
-          echo "GITHUB_ACTOR => $GITHUB_ACTOR"
-          git config --global user.name ${GITHUB_ACTOR}
-          git config --global user.email ${GITHUB_EMAIL}
+          # echo "GITHUB_EMAIL => $GITHUB_EMAIL"
+          # echo "GITHUB_ACTOR => $GITHUB_ACTOR"
+          # git config --global user.name ${GITHUB_ACTOR}
+          # git config --global user.email ${GITHUB_EMAIL}
           npm install
-          npm run deploy
+          npm run build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.github_blog  }}
+          publish_dir: ./public
