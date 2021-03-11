@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: Deploy Project
+      - name: Build Project
         env:
           GITHUB_CONTEXT: ${{ toJson(github)}}
           GITHUB_ACTOR: ${{ github.actor}}
@@ -34,7 +34,7 @@ jobs:
           npm install
           npm run build
 
-      - name: Deploy
+      - name: Deploy Project
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.BLOG  }}

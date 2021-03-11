@@ -1,5 +1,5 @@
 ---
-slug: "/blog/github action"
+slug: "/blog/github-action"
 title: "Github Action 공부중"
 ---
 
