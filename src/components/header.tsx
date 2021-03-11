@@ -10,6 +10,32 @@ const HeaderStyle = styled.header`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  & > h1 {
+    padding: 0;
+    @media only screen and (max-width: 600px) {
+      display: flex;
+    }
+  }
+
+  & > h1 > a {
+    @media only screen and (max-width: 600px) {
+      margin: auto;
+      max-width: 300px;
+      // border: 1px solid black;
+    }
+  }
+
+  & > div {
+    @media only screen and (max-width: 600px) {
+      // border: 1px solid black;
+      display: flex;
+    }
+  }
+
+  & nav > ul {
+    padding: 0;
+  }
 `;
 
 const Header: FC<HeaderProps> = ({ menuLinks, siteTitle }) => {
@@ -27,7 +53,13 @@ const Header: FC<HeaderProps> = ({ menuLinks, siteTitle }) => {
       </h1>
       <div>
         <nav>
-          <ul style={{ display: "flex", flex: 1 }}>
+          <ul
+            style={{
+              display: "flex",
+              flex: 1,
+              flexWrap: "wrap",
+            }}
+          >
             {menuLinks.map((link) => (
               <li
                 key={link.name}
