@@ -24,5 +24,14 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm install
-      - run: npm run deploy
+
+      - name: Deploy Project
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github)}}
+          GITHUB_ACTOR: ${{ github.actor}}
+          GITHUB_EMAIL: ${{ github.event.commits[0].committer.email}} #FIXME
+        run: |
+          git config --global user.name ${GITHUB_ACTOR}
+          git config --global user.email ${GITHUB_EMAIL}
+          npm install
+          npm run deploy
