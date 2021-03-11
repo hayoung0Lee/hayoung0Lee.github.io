@@ -1,2 +1,0 @@
-(self.webpackChunkmy_gatsby_site=self.webpackChunkmy_gatsby_site||[]).push([[77],{7703:function(e,t,n){"use strict";n.r(t);var a=n(7294),l=n(5444),c=n(7354);t.default=function(){return a.createElement(c.Z,null,a.createElement("div",null,"JavaScript Page"),a.createElement("p",null,"JavaScript 개념 정리 ",a.createElement(l.Link,{to:"/blog/js-concept"},"읽기"),"!"))}}}]);
-//# sourceMappingURL=component---src-pages-js-js-b53a52d33cee415a2bf5.js.map
