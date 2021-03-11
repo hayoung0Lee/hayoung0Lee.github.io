@@ -10,6 +10,10 @@ module.exports = {
         name: "JavaScript",
         link: "/javascript",
       },
+      {
+        name: "Project",
+        link: "/project",
+      },
     ],
   },
   plugins: [
