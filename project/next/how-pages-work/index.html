@@ -129,8 +129,10 @@ data-styled.g4[id="blogTemplate__MarkDownStyle-sc-66zedh-1"]{content:"sbZIs,"}/*
 </ol>
 <p>여기 최상단에 있는 파일들은 열어보니까 dist에 있는걸 가져와서 exports하고있어서 dist 폴더 내부를 살펴보기로 했다(이렇게 큰 패키지는 어떻게 구성되는지 잘 모르기때문에 일단 느낌대로 따라가고 있다. )</p>
 <ol start="3">
-<li>일단 젤처음에 시작되는 next executable이 어떻게 생겼는지를 살펴보려고 한다.
-<img src="../memo-next/next_executable.png" alt="next executable" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/next_executable.png';" /></li>
+<li>
+<p>일단 젤처음에 시작되는 next executable이 어떻게 생겼는지를 살펴보려고 한다.</p>
+<img src="../memo-next/next_executable.png" alt="next executable" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/next_executable.png';" />
+</li>
 <li>얘는 commands를 실행하는 부분으로 구성되어있다.(default는 dev)</li>
 <li>commands가 있는 부분은 commands에 따라서 아래의 동작을 실행한다.</li>
 </ol>
@@ -168,7 +170,7 @@ data-styled.g4[id="blogTemplate__MarkDownStyle-sc-66zedh-1"]{content:"sbZIs,"}/*
   <span class="token punctuation">}</span></code></pre></div>
 <img src="../memo-next/interop.png" alt="next executable" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/interop.png';" />
 <p>이렇게 두번나오는데 왜 두번인지는 잘 모르겠다!!! 형태가 다른데, 뭔가 처리할텐데 거기까진 파악이 어렵다.</p>
-<ol>
+<ol start="4">
 <li>next-dev안에 startServer
 이파일은 next dev 했을때 실행되는 부분으로 파악된다.</li>
 </ol>
@@ -194,8 +196,7 @@ data-styled.g4[id="blogTemplate__MarkDownStyle-sc-66zedh-1"]{content:"sbZIs,"}/*
 <p>이렇게 찍어보면</p>
 <img src="../memo-next/createServer.png" alt="createServer" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/createServer.png';" />
 <ol start="6">
-<li>파악하고 싶은것 pages가 어떻게 대강 처리되는지 로직
-진행중...</li>
+<li>파악하고 싶은것 pages가 어떻게 대강 처리되는지을 앞으로 더 파악하기</li>
 </ol>
 <h3>후기</h3>
-<p>JavaScript로 이런 프레임워크를 만들어내는 사람들은 멋있다..</p></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/project/next/how-pages-work";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-da8157b780a7e1fd9e9e.js"],"app":["/app-11ccb58aa5329169f9ed.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e1cd33526101059c43e1.js"],"component---src-pages-everything-js":["/component---src-pages-everything-js-3edf07596e55a5b7644f.js"],"component---src-pages-index-js":["/component---src-pages-index-js-c4bad128e06d89fecf56.js"],"component---src-pages-javascript-js":["/component---src-pages-javascript-js-5de3d3baef2add989ad8.js"],"component---src-pages-project-js":["/component---src-pages-project-js-dc0ded87965b81bce343.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-5fa7b409667cf4ab9e65.js"]};/*]]>*/</script><script src="/polyfill-da8157b780a7e1fd9e9e.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-5fa7b409667cf4ab9e65.js" async=""></script><script src="/7bfd20e1f65113b6055261005b7bc04ccec8984c-1f631201c64baba9140d.js" async=""></script><script src="/app-11ccb58aa5329169f9ed.js" async=""></script><script src="/framework-25c36faeffbceda8f6ff.js" async=""></script><script src="/webpack-runtime-a3c6a2357f0fa5ee7f3e.js" async=""></script></body></html>
+<p>JavaScript로 이런 프레임워크를 만들어내는 사람들은 멋있다.. 그냥 굳이 이렇게 안봐도 되는데, 이런거 만드는 사람들은 어떻게 이렇게 코드를 쓰나 궁금해서 한번 열어보는거다. 한 3년내로 웹에서 그냥 라이브러리 갖다 쓰는 사람말고 이런것도 만들어 낼만한 역량을 갖추었으면!!</p></div></main></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/project/next/how-pages-work";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"polyfill":["/polyfill-da8157b780a7e1fd9e9e.js"],"app":["/app-11ccb58aa5329169f9ed.js"],"component---src-pages-404-js":["/component---src-pages-404-js-e1cd33526101059c43e1.js"],"component---src-pages-everything-js":["/component---src-pages-everything-js-3edf07596e55a5b7644f.js"],"component---src-pages-index-js":["/component---src-pages-index-js-c4bad128e06d89fecf56.js"],"component---src-pages-javascript-js":["/component---src-pages-javascript-js-5de3d3baef2add989ad8.js"],"component---src-pages-project-js":["/component---src-pages-project-js-dc0ded87965b81bce343.js"],"component---src-templates-blog-template-js":["/component---src-templates-blog-template-js-5fa7b409667cf4ab9e65.js"]};/*]]>*/</script><script src="/polyfill-da8157b780a7e1fd9e9e.js" nomodule=""></script><script src="/component---src-templates-blog-template-js-5fa7b409667cf4ab9e65.js" async=""></script><script src="/7bfd20e1f65113b6055261005b7bc04ccec8984c-1f631201c64baba9140d.js" async=""></script><script src="/app-11ccb58aa5329169f9ed.js" async=""></script><script src="/framework-25c36faeffbceda8f6ff.js" async=""></script><script src="/webpack-runtime-a3c6a2357f0fa5ee7f3e.js" async=""></script></body></html>
