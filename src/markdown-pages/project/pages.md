@@ -142,12 +142,12 @@ export async function getServerSideProps() {
 
 1. 우선 npm run dev라고 입력하면 `package.json`에서 `next dev`가 실행된다. 이때 next는 path에 등록되있어서 바로 사용할 수 있다.
 2. node_modules내의 next 폴더에 가면 아래의 내용이 있다.
-   <img src="../memo-next/next_modules.png" alt="next module" onerror="this.src='../../markdown-images/memo-next/next_modules.png';" />
+   <img src="../memo-next/next_modules.png" alt="next module" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/next_modules.png';" />
 
 여기 최상단에 있는 파일들은 열어보니까 dist에 있는걸 가져와서 exports하고있어서 dist 폴더 내부를 살펴보기로 했다(이렇게 큰 패키지는 어떻게 구성되는지 잘 모르기때문에 일단 느낌대로 따라가고 있다. )
 
 3. 일단 젤처음에 시작되는 next executable이 어떻게 생겼는지를 살펴보려고 한다.
-   <img src="../memo-next/next_executable.png" alt="next executable" onerror="this.src='../../markdown-images/memo-next/next_executable.png';" />
+   <img src="../memo-next/next_executable.png" alt="next executable" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/next_executable.png';" />
 
 - 얘는 commands를 실행하는 부분으로 구성되어있다.(default는 dev)
 - commands가 있는 부분은 commands에 따라서 아래의 동작을 실행한다.
@@ -190,29 +190,29 @@ function _interopRequireWildcard(obj) {
   }
 ```
 
-<img src="../memo-next/interop.png" alt="next executable" onerror="this.src='../../markdown-images/memo-next/interop.png';" />
+<img src="../memo-next/interop.png" alt="next executable" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/interop.png';" />
 
 이렇게 두번나오는데 왜 두번인지는 잘 모르겠다!!! 형태가 다른데, 뭔가 처리할텐데 거기까진 파악이 어렵다.
 
-4. next-dev안에 startServer
+1. next-dev안에 startServer
    이파일은 next dev 했을때 실행되는 부분으로 파악된다.
 
-<img src="../memo-next/next-dev-code.png" alt="next-dev-code" onerror="this.src='../../markdown-images/memo-next/next-dev-code.png';" />
+<img src="../memo-next/next-dev-code.png" alt="next-dev-code" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/next-dev-code.png';" />
 
 코드에 저렇게 추가해서 진짜 여기까지 와서 실행하는지 한번 봤다.
 
-<img src="../memo-next/next-dev-result.png" alt="next-dev-result" onerror="this.src='../../markdown-images/memo-next/next-dev-result.png';" />
+<img src="../memo-next/next-dev-result.png" alt="next-dev-result" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/next-dev-result.png';" />
 
 실제로 여기서 실행 중이었다.
 
 startServer까지 이렇게 도달하는구나! Port가 사용중이다이런에러도 요쪽에서 처리중이었다.
 
 - 아래는 start-server가 어떻게 생겼는지 본건데 여기서 createServer를 호출하고 있다.
-  <img src="../memo-next/start-server.png" alt="start-server" onerror="this.src='../../markdown-images/memo-next/start-server.png';" />
+  <img src="../memo-next/start-server.png" alt="start-server" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/start-server.png';" />
 
   이 이상은 더이상 파악이 조금 어려워서 createServer가 있는 부분을 찾아보았다.
 
-5. CreateServer가 있는곳: `next/dist/server/next.js`
+1. CreateServer가 있는곳: `next/dist/server/next.js`
    여기서 CreateServer를 하고 있다.
 
 ```javascript
@@ -225,7 +225,7 @@ function createServer(options) {
 
 이렇게 찍어보면
 
-<img src="../memo-next/createServer.png" alt="createServer" onerror="this.src='../../markdown-images/memo-next/createServer.png';" />
+<img src="../memo-next/createServer.png" alt="createServer" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/createServer.png';" />
 
 6. 파악하고 싶은것 pages가 어떻게 대강 처리되는지 로직
    진행중...
