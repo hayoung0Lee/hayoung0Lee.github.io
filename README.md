@@ -87,6 +87,15 @@ So, do something in your develop branch and `npm run deploy` will make change in
 
 https://github.com/sindresorhus/github-markdown-css
 
+## How to add image
+
+```md
+<!-- ![prototype](../../markdown-images/prototype.png) -->
+<img src="../../markdown-images/prototype.png"/>
+
+<img src="../memo-next/createServer.png" alt="createServer" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/createServer.png';" />
+```
+
 ## References
 
 https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/
