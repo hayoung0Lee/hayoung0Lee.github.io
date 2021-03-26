@@ -4,76 +4,64 @@ import { HeaderProps } from "../utils/types";
 import { Link } from "gatsby";
 
 const HeaderStyle = styled.header`
-  border: 1px solid black;
   min-height: 60px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 
-  & > h1 {
-    padding: 0;
-    @media only screen and (max-width: 600px) {
+  & nav {
+    & ul {
       display: flex;
-    }
-  }
+      justify-content: space-between;
+      list-style-type: none;
+      padding: 0;
+      flex-wrap: wrap;
 
-  & > h1 > a {
-    @media only screen and (max-width: 600px) {
-      margin: auto;
-      max-width: 300px;
-      // border: 1px solid black;
+      & li {
+        padding: 10px;
+        padding-left: 0px;
+        margin-right: 10px;
+      }
     }
-  }
-
-  & > div {
-    @media only screen and (max-width: 600px) {
-      // border: 1px solid black;
-      display: flex;
-    }
-  }
-
-  & nav > ul {
-    padding: 0;
   }
 `;
 
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  height: 60px;
+  font-size: 30px;
+`;
 const Header: FC<HeaderProps> = ({ menuLinks, siteTitle }) => {
   return (
     <HeaderStyle>
-      <h1 style={{ margin: 0, flex: 1 }}>
-        <Link
-          to="/"
-          style={{
-            textDecoration: "none",
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-      <div>
-        <nav>
-          <ul
-            style={{
-              display: "flex",
-              flex: 1,
-              flexWrap: "wrap",
-            }}
-          >
-            {menuLinks.map((link) => (
-              <li
-                key={link.name}
+      <Link
+        to="/"
+        style={{
+          textDecoration: "none",
+          color: "black",
+        }}
+      >
+        <Logo>{siteTitle}</Logo>
+      </Link>
+      <nav>
+        <ul>
+          {menuLinks.map((link) => (
+            <li key={link.name}>
+              <Link
+                to={link.link}
                 style={{
-                  listStyleType: `none`,
-                  padding: `1rem`,
+                  textDecoration: "none",
+                  color: "black",
                 }}
               >
-                <Link to={link.link}>{link.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </HeaderStyle>
   );
 };
