@@ -55,6 +55,7 @@ const Header: FC<HeaderProps> = ({ menuLinks, siteTitle }) => {
                   textDecoration: "none",
                   color: "black",
                 }}
+                activeStyle={{ fontWeight: "bold" }}
               >
                 {link.name}
               </Link>
