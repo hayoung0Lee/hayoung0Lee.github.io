@@ -41,8 +41,8 @@ const CardLayout = ({ contents }) => {
           id: React.Key
         ) => {
           return (
-            <Link to={d.frontmatter.slug}>
-              <Card key={id}>
+            <Link key={id} to={d.frontmatter.slug}>
+              <Card>
                 <CardTitle>{d.frontmatter.title}</CardTitle>
                 <CardBody>어쩌면 미리보기..</CardBody>
               </Card>
