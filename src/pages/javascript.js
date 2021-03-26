@@ -14,6 +14,7 @@ export const query = graphql`
           slug
           date
         }
+        html
         fileAbsolutePath
       }
     }

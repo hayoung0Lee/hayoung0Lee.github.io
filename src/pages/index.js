@@ -12,6 +12,7 @@ export const query = graphql`
           slug
           date
         }
+        html
         fileAbsolutePath
       }
     }
@@ -22,7 +23,7 @@ export const query = graphql`
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <h3>전체글을 보여줄까 고민중인 페이지</h3>
+      <h3>This is my blog home</h3>
       <CardLayout contents={data.allMarkdownRemark.nodes} />
     </Layout>
   );
