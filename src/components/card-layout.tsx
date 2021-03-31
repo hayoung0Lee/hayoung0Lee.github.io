@@ -25,7 +25,7 @@ const Card = styled.div`
 `;
 
 const CardTitle = styled.h4`
-  width: 250px;
+  width: 240px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -45,7 +45,7 @@ const CardLayout = ({ contents }) => {
       {contents.map(
         (
           d: {
-            frontmatter: { title: React.ReactNode; slug: string };
+            frontmatter: { title: React.ReactNode; slug: string; date: string };
             html: any;
           },
           id: React.Key
@@ -54,7 +54,9 @@ const CardLayout = ({ contents }) => {
           return (
             <Link key={id} to={d.frontmatter.slug}>
               <Card>
-                <CardTitle>{d.frontmatter.title}</CardTitle>
+                <CardTitle>
+                  {d.frontmatter.date} {d.frontmatter.title}
+                </CardTitle>
                 {previewData ? (
                   <CardBody
                     dangerouslySetInnerHTML={{ __html: previewData }}

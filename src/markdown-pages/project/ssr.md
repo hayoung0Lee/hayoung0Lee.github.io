@@ -1,6 +1,7 @@
 ---
 slug: "/project/next/ssr"
 title: "Next.js DeepDive"
+date: "2021-03-31"
 ---
 
 ### Next.js 왜 공부하는가?

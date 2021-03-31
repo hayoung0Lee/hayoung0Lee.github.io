@@ -1,6 +1,7 @@
 ---
 slug: "/javascript/keywords"
 title: "JavaScript Keywords 정리"
+date: "2021-03-31"
 ---
 
 <!-- ## Keywords -->

@@ -1,6 +1,7 @@
 ---
 slug: "/blog/blog-develop-journal"
 title: "Github blog 를 만들면서"
+date: "2021-03-31"
 ---
 
 ### 개발 목표

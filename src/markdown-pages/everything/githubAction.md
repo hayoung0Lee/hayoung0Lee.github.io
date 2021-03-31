@@ -1,6 +1,7 @@
 ---
 slug: "/blog/github-action"
 title: "Github Action 공부중"
+date: "2021-03-31"
 ---
 
 ## Hello

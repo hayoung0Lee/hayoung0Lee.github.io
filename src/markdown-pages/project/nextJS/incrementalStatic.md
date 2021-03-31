@@ -1,6 +1,7 @@
 ---
 slug: "/blog/nextJS"
 title: "NextJS Incremental Static Regeneration이란?"
+date: "2021-03-31"
 ---
 
 - [공부한 내용](https://nextjs.org/docs/basic-features/data-fetching#incremental-static-regeneration)

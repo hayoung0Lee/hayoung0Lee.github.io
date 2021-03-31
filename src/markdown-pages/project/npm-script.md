@@ -1,6 +1,7 @@
 ---
 slug: "/project/next/npm-scripts"
 title: "package.json의 scripts 부분 원리"
+date: "2021-03-28"
 ---
 
 ### How does Scripts Part find executable

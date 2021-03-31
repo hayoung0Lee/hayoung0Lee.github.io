@@ -5,7 +5,10 @@ import CardLayout from "../components/card-layout";
 
 export const query = graphql`
   {
-    allMarkdownRemark {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      limit: 1000
+    ) {
       nodes {
         frontmatter {
           title

@@ -1,6 +1,7 @@
 ---
 slug: "/project/next/how-pages-work"
 title: "Next.js 의 Page는 어떻게 동작하나 + 코드 진짜 까보기"
+date: "2021-03-29"
 ---
 
 ### Next.js 의 Page는 어떻게 동작하나

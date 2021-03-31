@@ -7,6 +7,7 @@ export const query = graphql`
   {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/markdown-pages/everything/" } }
+      sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       nodes {
         frontmatter {
