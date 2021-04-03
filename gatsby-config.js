@@ -3,7 +3,7 @@ module.exports = {
     title: "Hayoung's Memo",
     menuLinks: [
       {
-        name: "home",
+        name: "Home",
         link: "/",
       },
       {
@@ -15,8 +15,8 @@ module.exports = {
         link: "/project",
       },
       {
-        name: "Everything",
-        link: "/everything",
+        name: "Random",
+        link: "/random",
       },
       {
         name: "About Me",

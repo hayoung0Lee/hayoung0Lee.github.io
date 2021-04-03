@@ -4,11 +4,28 @@ import Header from "./header";
 import { useStaticQuery, graphql } from "gatsby";
 import { Helmet } from "react-helmet";
 import "./layout.css";
+import { device } from "../utils/device";
 
 const Container = styled.div`
-  width: 80vw;
   margin: auto;
   box-sizing: border-box;
+`;
+
+const HeaderWrapper = styled.div`
+  background-color: black;
+  padding: 0 5vw 0 5vw;
+
+  @media ${device.laptop} {
+    padding: 0 2vw 0 2vw;
+  }
+`;
+
+const MainWrapper = styled.div`
+  padding: 0 5vw 0 5vw;
+
+  @media ${device.laptop} {
+    padding: 0 2vw 0 2vw;
+  }
 `;
 
 const Layout: FC<React.ReactNode> = ({ children }) => {
@@ -38,11 +55,13 @@ const Layout: FC<React.ReactNode> = ({ children }) => {
           },
         ]}
       ></Helmet>
-      <Header
-        menuLinks={data.site.siteMetadata.menuLinks}
-        siteTitle={data.site.siteMetadata.title}
-      />
-      <main>{children}</main>
+      <HeaderWrapper>
+        <Header
+          menuLinks={data.site.siteMetadata.menuLinks}
+          siteTitle={data.site.siteMetadata.title}
+        />
+      </HeaderWrapper>
+      <MainWrapper>{children}</MainWrapper>
     </Container>
   );
 };

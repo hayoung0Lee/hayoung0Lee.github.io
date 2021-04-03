@@ -7,7 +7,7 @@ import Filter from "../components/filter";
 export const query = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/markdown-pages/project/" } }
+      filter: { fileAbsolutePath: { regex: "/markdown-pages/random/" } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       nodes {
@@ -20,7 +20,8 @@ export const query = graphql`
         fileAbsolutePath
       }
     }
-    allDirectory(filter: { relativeDirectory: { eq: "project" } }) {
+
+    allDirectory(filter: { relativeDirectory: { eq: "random" } }) {
       nodes {
         base
         relativeDirectory
@@ -30,18 +31,18 @@ export const query = graphql`
 `;
 
 // markup
-const ProjectPage = ({ data }) => {
+const RandomPage = ({ data }) => {
   const [tag, setTag] = useState("all");
   return (
     <Layout>
-      <Filter tag={tag} setTag={setTag} data={data} base={"project"} />
+      <Filter tag={tag} setTag={setTag} data={data} base={"random"} />
       <CardLayout
-        base={"project"}
-        tag={tag}
         contents={data.allMarkdownRemark.nodes}
+        base={"random"}
+        tag={tag}
       />
     </Layout>
   );
 };
 
-export default ProjectPage;
+export default RandomPage;
