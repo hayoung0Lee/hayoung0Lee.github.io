@@ -3,7 +3,7 @@ module.exports = {
     title: "Hayoung's Memo",
     menuLinks: [
       {
-        name: "home",
+        name: "Home",
         link: "/",
       },
       {
