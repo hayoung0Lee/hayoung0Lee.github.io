@@ -82,7 +82,7 @@ const Logo = styled.div`
   display: flex;
   align-items: center;
   height: 60px;
-  font-size: 30px;
+  font-size: 25px;
   color: white;
 `;
 
