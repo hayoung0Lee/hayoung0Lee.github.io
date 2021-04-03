@@ -19,4 +19,12 @@ date: "2021-04-03"
 
 https://jsramblings.com/how-to-use-media-queries-with-styled-components/
 
+6. box-sizing: border-box 를 사용해서 크기 감 잘잡기
+- https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
+
+
+7. display: 속성
+- https://www.daleseo.com/css-display-inline-block/
+
+
 # references
