@@ -5,16 +5,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allFile(filter: { sourceInstanceName: { eq: "markdown-pages" } }) {
+      allMarkdownRemark {
         nodes {
-          childMarkdownRemark {
-            frontmatter {
-              date
-              slug
-            }
+          frontmatter {
+            title
+            slug
+            date
           }
-          birthTime
-          modifiedTime
+          html
+          rawMarkdownBody
         }
       }
     }
@@ -26,16 +25,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     return;
   }
 
-  result.data.allFile.nodes.forEach(
-    ({ childMarkdownRemark, birthTime, modifiedTime }) => {
+  result.data.allMarkdownRemark.nodes.forEach(
+    ({ frontmatter, html, rawMarkdownBody }) => {
       createPage({
-        path: childMarkdownRemark.frontmatter.slug,
+        path: frontmatter.slug,
         component: blogPostTemplate,
         context: {
           // additional data can be passed via context
-          birthTime: birthTime,
-          modifiedTime: modifiedTime,
-          slug: childMarkdownRemark.frontmatter.slug,
+          html,
+          rawMarkdownBody,
+          frontmatter,
         },
       });
     }
