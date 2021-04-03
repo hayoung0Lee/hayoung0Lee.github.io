@@ -75,35 +75,81 @@ const CardDate = styled.h5`
 //   background-color: rgba(119, 119, 119, 0.2);
 // `;
 
-const CardLayout = ({ contents }) => {
-  return (
-    <CardLayoutWrapper>
-      {contents.map(
-        (
-          d: {
-            frontmatter: { title: React.ReactNode; slug: string; date: string };
-            html: any;
-          },
-          id: React.Key
-        ) => {
-          // const previewData = d.html?.substring(0, 250); // FIXME: 이거 일단 그냥 string으로 잘랐는데, 문제가 좀 있을듯
-          return (
-            <Link key={id} to={d.frontmatter.slug}>
-              <Card>
-                <CardTitle>{d.frontmatter.title}</CardTitle>
-                <CardDate>{d.frontmatter.date}</CardDate>
-                {/* {previewData ? (
+const CardLayout = ({ contents, base, tag }) => {
+  if (tag === "all") {
+    return (
+      <CardLayoutWrapper>
+        {contents.map(
+          (
+            d: {
+              frontmatter: {
+                title: React.ReactNode;
+                slug: string;
+                date: string;
+              };
+              html: any;
+            },
+            id: React.Key
+          ) => {
+            // const previewData = d.html?.substring(0, 250); // FIXME: 이거 일단 그냥 string으로 잘랐는데, 문제가 좀 있을듯
+            return (
+              <Link key={id} to={d.frontmatter.slug}>
+                <Card>
+                  <CardTitle>{d.frontmatter.title}</CardTitle>
+                  <CardDate>{d.frontmatter.date}</CardDate>
+                  {/* {previewData ? (
                   <CardBody
                     dangerouslySetInnerHTML={{ __html: previewData }}
                   ></CardBody>
                 ) : (
                   <CardBody>어쩌면 미리보기..</CardBody>
                 )} */}
-              </Card>
-            </Link>
-          );
-        }
-      )}
+                </Card>
+              </Link>
+            );
+          }
+        )}
+      </CardLayoutWrapper>
+    );
+  }
+
+  return (
+    <CardLayoutWrapper>
+      {contents
+        .filter(({ fileAbsolutePath }) =>
+          fileAbsolutePath.match(`/markdown-pages/${base}/${tag}`)
+        )
+        .map(
+          (
+            d: {
+              frontmatter: {
+                title: React.ReactNode;
+                slug: string;
+                date: string;
+              };
+              html: any;
+              fileAbsolutePath: string;
+            },
+            id: React.Key
+          ) => {
+            // const previewData = d.html?.substring(0, 250); // FIXME: 이거 일단 그냥 string으로 잘랐는데, 문제가 좀 있을듯
+            return (
+              <Link key={id} to={d.frontmatter.slug}>
+                <Card>
+                  <CardTitle>{d.frontmatter.title}</CardTitle>
+                  <CardDate>{d.frontmatter.date}</CardDate>
+                  {/* {previewData ? (
+                  <CardBody
+                    dangerouslySetInnerHTML={{ __html: previewData }}
+                  ></CardBody>
+                ) : (
+                  <CardBody>어쩌면 미리보기..</CardBody>
+                )} */}
+                </Card>
+              </Link>
+            );
+          }
+        )}
     </CardLayoutWrapper>
   );
 };

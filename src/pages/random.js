@@ -1,7 +1,8 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import CardLayout from "../components/card-layout";
+import Filter from "../components/filter";
 
 export const query = graphql`
   {
@@ -19,15 +20,27 @@ export const query = graphql`
         fileAbsolutePath
       }
     }
+
+    allDirectory(filter: { relativeDirectory: { eq: "random" } }) {
+      nodes {
+        base
+        relativeDirectory
+      }
+    }
   }
 `;
 
 // markup
 const RandomPage = ({ data }) => {
+  const [tag, setTag] = useState("all");
   return (
     <Layout>
-      <h3>Random Page ({data.allMarkdownRemark.nodes.length})</h3>
-      <CardLayout contents={data.allMarkdownRemark.nodes} />
+      <Filter tag={tag} setTag={setTag} data={data} base={"random"} />
+      <CardLayout
+        contents={data.allMarkdownRemark.nodes}
+        base={"random"}
+        tag={tag}
+      />
     </Layout>
   );
 };

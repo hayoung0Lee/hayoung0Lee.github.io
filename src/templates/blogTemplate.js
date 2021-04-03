@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+// import { graphql } from "gatsby";
 import Layout from "../components/layout";
 import styled from "styled-components";
 import "./blogTemplate.css";
@@ -36,7 +36,7 @@ const MarkDownStyle = styled.div`
 `;
 
 export default function Template({ pageContext }) {
-  const { frontmatter, html, rawMarkdownBody } = pageContext;
+  const { frontmatter, html } = pageContext;
 
   return (
     <Layout>
