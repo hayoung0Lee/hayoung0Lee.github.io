@@ -26,8 +26,23 @@ export const query = graphql`
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <h3>Home ({data.allMarkdownRemark.nodes.length})</h3>
-      <CardLayout tag={"all"} contents={data.allMarkdownRemark.nodes} />
+      <h3>
+        Home (
+        {
+          data.allMarkdownRemark.nodes.filter(
+            ({ fileAbsolutePath }) =>
+              !fileAbsolutePath.match(`/markdown-pages/temp`)
+          ).length
+        }
+        )
+      </h3>
+      <CardLayout
+        tag={"all"}
+        contents={data.allMarkdownRemark.nodes.filter(
+          ({ fileAbsolutePath }) =>
+            !fileAbsolutePath.match(`/markdown-pages/temp`)
+        )}
+      />
     </Layout>
   );
 };
