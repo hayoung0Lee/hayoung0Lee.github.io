@@ -6,6 +6,7 @@ import CardLayout from "../components/card-layout";
 export const query = graphql`
   {
     allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/^((?!markdown-pages/temp).)*$/" } }
       sort: { order: DESC, fields: [frontmatter___date] }
       limit: 1000
     ) {

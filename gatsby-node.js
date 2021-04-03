@@ -5,13 +5,18 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const result = await graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        filter: {
+          fileAbsolutePath: { regex: "/^((?!markdown-pages/temp).)*$/" }
+        }
+      ) {
         nodes {
           frontmatter {
             title
             slug
             date
           }
+          fileAbsolutePath
           html
           rawMarkdownBody
         }
