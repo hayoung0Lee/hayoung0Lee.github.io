@@ -27,7 +27,7 @@ export const query = graphql`
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <h3>This is my blog home</h3>
+      <h3>This is my blog home ({data.allMarkdownRemark.nodes.length})</h3>
       <CardLayout contents={data.allMarkdownRemark.nodes} />
     </Layout>
   );

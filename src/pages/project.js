@@ -26,7 +26,7 @@ export const query = graphql`
 const ProjectPage = ({ data }) => {
   return (
     <Layout>
-      <h3>Project Page</h3>
+      <h3>Project Page ({data.allMarkdownRemark.nodes.length})</h3>
       <CardLayout contents={data.allMarkdownRemark.nodes} />
     </Layout>
   );

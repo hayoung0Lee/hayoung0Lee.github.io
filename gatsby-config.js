@@ -15,8 +15,8 @@ module.exports = {
         link: "/project",
       },
       {
-        name: "Everything",
-        link: "/everything",
+        name: "Random",
+        link: "/random",
       },
       {
         name: "About Me",

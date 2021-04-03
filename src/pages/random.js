@@ -6,7 +6,7 @@ import CardLayout from "../components/card-layout";
 export const query = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/markdown-pages/everything/" } }
+      filter: { fileAbsolutePath: { regex: "/markdown-pages/random/" } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       nodes {
@@ -23,13 +23,13 @@ export const query = graphql`
 `;
 
 // markup
-const EverythingPage = ({ data }) => {
+const RandomPage = ({ data }) => {
   return (
     <Layout>
-      <h3>Everything Page</h3>
+      <h3>Random Page ({data.allMarkdownRemark.nodes.length})</h3>
       <CardLayout contents={data.allMarkdownRemark.nodes} />
     </Layout>
   );
 };
 
-export default EverythingPage;
+export default RandomPage;
