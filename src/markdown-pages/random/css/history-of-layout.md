@@ -28,7 +28,7 @@ flex는 한 columns이나 rows를 기준으로 공간을 배치하기 위해서 
   - [how to use it](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
   - [how to use it(ko)](https://heropy.blog/2018/11/24/css-flexible-box/)
 
-3. _**Grid-based layout - How to use Grid**_
+3. **Grid-based layout - How to use Grid**
 
 > CSS grid was first proposed in 2011 (not too long after the flexbox proposal), but took a long time to gain widespread adoption with browsers. As of early 2018, CSS grid is supported by most modern browsers (a huge improvement over even a year or two ago). - from Modern CSS Explained for Dinosaurs
 
