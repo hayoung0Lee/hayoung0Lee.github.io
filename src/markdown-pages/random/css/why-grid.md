@@ -26,41 +26,43 @@ Grid 탄생 배경은 [Modern CSS Explained for Dinosaurs](https://medium.com/ac
 
   <img src="../../../markdown-images/grid-tutorial.png" alt="img from https://www.youtube.com/watch?v=plRcoRqLriw&list=PL4-IK0AVhVjPv5tfS82UF_iQgFp4Bl998&ab_channel=KevinPowell this lecture"/>
 
-- 사용한 속성
+- display: grid;
 
-  - display: grid;
-    - grid를 적용할 대상에 적용. 이크기에 맞춰서 grid가 생긴다. 그리고 자식요소들은 Grid Items가 된다
-    - body에 grid 속성을 줄수도 있다.
+  - grid를 적용할 대상에 적용. 이크기에 맞춰서 grid가 생긴다. 그리고 자식요소들은 Grid Items가 된다
+  - body에 grid 속성을 줄수도 있다.
 
-  ```html
-  <style>
-    body {
-      padding: 0;
-      margin: 0;
-      height: 100vh;
-      width: 100vw;
-      display: grid;
-      grid-template-columns: 1fr 2fr 3fr;
-      grid-template-rows: 1fr 2fr 3fr;
-    }
-  </style>
-  <body>
-    <header>header</header>
-    <nav>nav</nav>
-    <main>main</main>
-    <aside>aside</aside>
-    <footer>footer</footer>
-  </body>
-  ```
+    ```html
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 1fr 2fr 3fr;
+        grid-template-rows: 1fr 2fr 3fr;
+      }
+    </style>
+    <body>
+      <header>header</header>
+      <nav>nav</nav>
+      <main>main</main>
+      <aside>aside</aside>
+      <footer>footer</footer>
+    </body>
+    ```
 
     <img src="../../../markdown-images/grid-body.png" />
 
-  - grid-template:
+- grid-template:
 
-    - grid-template-columns:
-      - 명시적으로 열의 크기를 정한다. `grid-template-columns: 1열의 크기 2열의 크기 ...` 이다.
-    - grid-template-rows:
-      - 명시적으로 행의 크기를 정한다. `grid-template-rows: 1행의 크기 2행의 크기 ...`
+- grid-template-columns
+
+  - 명시적으로 열의 크기를 정한다.
+    - `grid-template-columns: 1열의 크기 2열의 크기 ...` 이다.
+  - grid-template-rows: 명시적으로 행의 크기를 정한다
+
+    - `grid-template-rows: 1행의 크기 2행의 크기 ...`
 
     <img src="../../../markdown-images/grid-template.png" />
 
@@ -84,7 +86,7 @@ Grid 탄생 배경은 [Modern CSS Explained for Dinosaurs](https://medium.com/ac
         grid-template-rows: repeat(3, 1fr);
         ```
 
-  - grid-column / grid-row
+  * grid-column / grid-row
 
     - `grid-template-*` 이것들은 grid 적용하는 container에 적용하는 것이고 grid-column과 grid-row는 grid-item에 적용해서 위치를 지정할 수 있다.
     - header와 footer에 grid를 적용해서 바닥에 바로 딱 붙일 수 있다
@@ -127,7 +129,7 @@ Grid 탄생 배경은 [Modern CSS Explained for Dinosaurs](https://medium.com/ac
 
     span은 어디까지 될지 grid 번호를 지정하는 것이 아니라 몇개를 쓸지 지정하는거라 편한점이 있다.
 
-  - grid-gap
+  * grid-gap
 
     - grid-item간의 gap을 지정할 수 있다.
 
@@ -138,7 +140,12 @@ Grid 탄생 배경은 [Modern CSS Explained for Dinosaurs](https://medium.com/ac
       gap: 10px 20px;
       ```
 
-<!--
+  <!-- - responsive하게
+
+    - 줄어들었을때 nav, aside가 각각 아래로 움직이도록 main의 위아래에 가려면?
+
+    - responsive하게 div가 여러개 배치 되려면?
+    <!-- -->
 
 ### Appyling Grid system based on [Kevin Powell's lecture](https://www.youtube.com/watch?v=plRcoRqLriw&list=PL4-IK0AVhVjPv5tfS82UF_iQgFp4Bl998&ab_channel=KevinPowell)
 
@@ -204,3 +211,4 @@ grid-column: span 3;
 - [CSS Grid 완벽 가이드](https://heropy.blog/2019/08/17/css-grid/)
 - [Build a Mosaic Portfolio Layout with CSS Grid](https://www.youtube.com/watch?v=plRcoRqLriw&list=PL4-IK0AVhVjPv5tfS82UF_iQgFp4Bl998&ab_channel=KevinPowell)
 - [An Introduction to the `fr` CSS unit](https://css-tricks.com/introduction-fr-css-unit/)
+````
