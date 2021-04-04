@@ -1,7 +1,7 @@
 ---
 slug: "/css/history of layout"
-title: "Float, Position, Flex, Grid"
-date: "2021-04-03"
+title: "History of Layout"
+date: "2021-04-04"
 ---
 
 This article is based on these three materials. [floats, flexbox, grid - the progression of CSS layouts](https://www.youtube.com/watch?v=R7gqJkdc5dM&ab_channel=KevinPowell), [Modern CSS Explained for Dinosaurs](https://medium.com/actualize-network/modern-css-explained-for-dinosaurs-5226febe3525), [Why CSS grid-area is the best property for laying out content](https://www.youtube.com/watch?v=duH4DLq5yoo&ab_channel=KevinPowell).
