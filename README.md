@@ -2,6 +2,10 @@
 
 [Visit My blog](https://hayoung0lee.github.io/)
 
+## gatsby client side only package
+
+https://www.gatsbyjs.com/docs/using-client-side-only-packages/
+
 ## How to use
 
 ```javascript

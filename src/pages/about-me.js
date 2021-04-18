@@ -1,7 +1,14 @@
-import * as React from "react";
+import React, { useState } from "react";
 import Layout from "../components/layout";
+import Loadable from "@loadable/component";
+
+const LoadableComponent = Loadable(() =>
+  import("hayoung-markdown").then((mod) => mod.App)
+);
 
 const AboutMePage = () => {
+  const [contents, setContents] = useState("");
+
   return (
     <Layout>
       <h3>Hi, I'm Hayoung Lee</h3>
@@ -19,6 +26,11 @@ const AboutMePage = () => {
             <a href="https://github.com/hayoung0Lee">Visit My Github</a>
           </strong>
         </p>
+        {/* test component */}
+        <LoadableComponent
+          passedContents={contents}
+          passedSetContents={setContents}
+        />
       </div>
     </Layout>
   );

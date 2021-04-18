@@ -16,6 +16,7 @@
     "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "babel-plugin-styled-components": "^1.12.0",
@@ -31,6 +32,7 @@
     "gatsby-source-filesystem": "^3.0.0",
     "gatsby-transformer-remark": "^3.0.0",
     "gatsby-transformer-sharp": "^3.0.0",
+    "hayoung-markdown": "^0.0.13",
     "netlify-cms-app": "^2.14.26",
     "prismjs": "^1.23.0",
     "react": "^17.0.1",
