@@ -1,105 +1,28 @@
-# Github blog
+# Next.Js based Github Blog
 
-[Visit My blog](https://hayoung0lee.github.io/)
+This project is using Next.js to make a github blog template. Anyone who are interested in this blog template can use this as they want. Any issue are welcome.
 
-## gatsby client side only package
+- In this project I'm using my custom react component package, hayoung-markdown. Please check this package.
 
-https://www.gatsbyjs.com/docs/using-client-side-only-packages/
+# Project Stack
 
-## How to use
+- Next.js
+- TypeScript
 
-```javascript
-// Inside gatsby-config.js, Add Menulinks. I added JavaScript menu to make 'JavaScript Menu'
-menuLinks: [
-    {
-    name: "home",
-    link: "/",
-    },
-    {
-    name: "JavaScript",
-    link: "/javascript",
-    },
-],
+# How I developed this website
 
-// Make javaScript folder inside markdown-pages folder, and Write your file
+# Main features
 
-// make JavaScript Page inside pages folder
+# LICENSE
 
-// In JavaScript page component, used regext to search markdown files
-export const query = graphql`
-  {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/markdown-pages/javascript/" } }
-    ) {
-      nodes {
-        frontmatter {
-          title
-          slug
-          date
-        }
-        fileAbsolutePath
-      }
-    }
-  }
-`;
-```
-
-## How to Start Gatsby Github blog
-
-```
-gatsby new # Start Project, Select Options
-
-git branch -m develop // Modify master branch to develop
-
-git add .
-git commit -m "Initial commit"
-git push -u origin develop
-
-
-// install gatsby gh-pages option
-npm install gh-pages --save-dev
-
-// add deploy command to gatsby
-"deploy": "gatsby build && gh-pages -d public -b master"
-
-// npm run deploy will do somethin to master branch
-npm run deploy
-```
-
-So, do something in your develop branch and `npm run deploy` will make change into the master branch.
-
-- [reference](https://m.blog.naver.com/lyshyn/221527017383)
-
-## How to add Markdown file
-
-[Follow this link](https://www.gatsbyjs.com/docs/how-to/routing/adding-markdown-pages/)
-
-## How to use siteMetaData
-
-[Follow this link](https://www.gatsbyjs.com/docs/creating-dynamic-navigation/#viewing-the-sitemetadata-in-graphql)
-
-## Markdown styling
-
-[Follow this link](https://www.gatsbyjs.com/plugins/gatsby-remark-prismjs/)
-[prismjs](https://prismjs.com/)
-
-## Font
-
-[spoca han sans](https://spoqa.github.io/spoqa-han-sans/ko-KR/#header)
-
-## Add github readme style
-
-https://github.com/sindresorhus/github-markdown-css
-
-## How to add image
-
-```md
-<!-- ![prototype](../../markdown-images/prototype.png) -->
-<img src="../../markdown-images/prototype.png"/>
-
-<img src="../memo-next/createServer.png" alt="createServer" onerror="this.src='https://raw.githubusercontent.com/hayoung0Lee/NextJs-DeepDive-Again/main/memo-next/createServer.png';" />
-```
-
-## References
-
-https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/
+<!--
+- 에디터 저장 속도?
+- auto saving 관련해서 알아보기
+- cms 종류 속도 알아보기: strapi: https://strapi.io/
+- github as cms
+- ghost: https://ghost.org/features/
+- How to trigger a Github action with an HTTP request: https://dev.to/rikurouvila/how-to-trigger-a-github-action-with-an-htt-request-545
+- github action: https://github.blog/2021-03-04-4-things-you-didnt-know-you-could-do-with-github-actions/
+- something like notion(기록 같은것 가능하게)
+- project serise로 보여줄 수 있는 기능(프로젝트 단위로 묶으면 좌측에 메뉴로 쭉 보이는것)
+ -->
