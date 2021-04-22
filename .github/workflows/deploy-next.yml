@@ -1,0 +1,27 @@
+name: learn-github-actions
+on: [push]
+jobs:
+  build-next-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: SetNodeEnv
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14"
+
+      - name: BuildAndExport
+        run: |
+          npm install
+          npm run export
+          touch out/.nojekyll
+
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: out
+          GITHUB_TOKEN: ${{ secrets.BLOG  }}

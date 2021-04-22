@@ -11,6 +11,11 @@ This project is using Next.js to make a github blog template. Anyone who are int
 
 # How I developed this website
 
+```
+next export
+
+```
+
 # Main features
 
 # LICENSE
