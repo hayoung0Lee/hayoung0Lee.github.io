@@ -12,5 +12,18 @@ a {
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+
+:root {
+  /* vertical | horizontal */
+  --layout-padding: 0px 8%;
+}
+
+.text-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

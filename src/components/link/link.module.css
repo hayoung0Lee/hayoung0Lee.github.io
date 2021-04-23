@@ -1,0 +1,11 @@
+.link {
+  display: block;
+  box-sizing: border-box;
+  padding: 8px 10px;
+}
+
+.active {
+  background-color: rgba(153, 153, 153, 0.9);
+  border-radius: 2px;
+  color: white;
+}

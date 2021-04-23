@@ -1,0 +1,30 @@
+.header {
+  padding: var(--layout-padding);
+  display: grid;
+  grid-template-columns: max-content minmax(50px, 1fr);
+}
+
+.logo {
+  margin: 10px 20px 10px 0px;
+  font-size: 3.3em;
+}
+
+.nav {
+  margin: 10px 0;
+  /* border: 1px solid black; */
+}
+
+.nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.nav li {
+  list-style: none;
+  display: block;
+  margin-left: 20px;
+  /* border: 1px solid black; */
+}

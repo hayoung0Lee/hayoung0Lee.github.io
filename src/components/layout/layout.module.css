@@ -1,0 +1,15 @@
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: max-content auto minmax(200px, max-content);
+}
+
+.main {
+  padding: var(--layout-padding);
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.footer {
+  padding: var(--layout-padding);
+}
