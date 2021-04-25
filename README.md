@@ -13,10 +13,22 @@ This project is using Next.js to make a github blog template. Anyone who are int
 
 ```
 next export
-
+npm install -g @aws-amplify/cli
 ```
 
 # Main features
+
+- github action to deploy this blog
+
+- [amplify](https://docs.amplify.aws/)
+
+# Reference
+
+- [Markdown/MDX with Next.js](https://nextjs.org/blog/markdown)
+- [A statically generated blog example using Next.js and Markdown](https://github.com/vercel/next.js/tree/canary/examples/blog-starter) - great reference
+- [AST](https://gyujincho.github.io/2018-06-19/AST-for-JS-devlopers)
+- https://nextjs.org/blog/markdown
+- https://medium.com/@kendallstrautman/creating-a-markdown-blog-with-next-js-aa44f762ea34
 
 # LICENSE
 
