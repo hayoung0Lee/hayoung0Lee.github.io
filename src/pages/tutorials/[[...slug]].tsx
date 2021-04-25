@@ -1,9 +1,10 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+// import styles from "../styles/Home.module.css";
 
+// Optional catch all routes
 const Tutorials = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Hayoung's Tutorials</title>
         <link rel="icon" href="/favicon.ico" />
