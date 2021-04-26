@@ -28,7 +28,7 @@ const Tutorials = ({ tutorialList }) => {
           {tutorialList.map((f, index) => {
             return (
               <li className={"listStyle"} key={index}>
-                <Link href={`/tutorials/${f}`}>
+                <Link href={`/tutorials/${f}/0`}>
                   <a className={"linkStyle"}>{f}</a>
                 </Link>
               </li>

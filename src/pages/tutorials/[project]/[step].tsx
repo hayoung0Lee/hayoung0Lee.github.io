@@ -1,17 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps, GetStaticPaths } from "next";
-import {
-  readFilesForThisPage,
-  getPath,
-  readFile,
-} from "../../../../utils/common";
+import { readFilesForThisPage, getPath, readFile } from "../../../utils/common";
+import { useEffect } from "react";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tutorialPath = getPath("tutorials");
   const tutorialList = await readFilesForThisPage(tutorialPath);
 
   const paths = [];
+
   for (const t of tutorialList) {
     const curTutorialPath = getPath(`tutorials/${t}`);
     const curTutorialList = await readFilesForThisPage(curTutorialPath);
@@ -28,31 +26,33 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // 파일 읽기
-  const postPath = getPath(`tutorials/${params.project}/${params.step}.md`);
-  const fileContent = await readFile(postPath);
+  const curTutorialPaths = getPath(`tutorials/${params.project}`);
+  const curTutorialList = await readFilesForThisPage(curTutorialPaths);
 
   return {
     props: {
       project: params.project,
       step: params.step,
-      fileContent,
+      curTutorialList,
     },
   };
 };
 
 // Optional catch all routes
-const Tutorials = ({ project, step, fileContent }) => {
+const Tutorials = ({ project, step, curTutorialList, setCurSteps }) => {
+  useEffect(() => {
+    setCurSteps([project, ...curTutorialList]);
+  }, []);
+
   return (
     <div>
       <Head>
-        <title>
-          Hayoung's Tutorials - {project}/{step}
-        </title>
+        <title>Hayoung's Tutorials - {project}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>{step}</div>
-      <ul>{fileContent}</ul>
+      <div>
+        Tutorials {project} - step {step}
+      </div>
     </div>
   );
 };
