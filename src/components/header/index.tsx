@@ -5,7 +5,9 @@ import CustomLink from "../link";
 const Header = () => {
   return (
     <header className={styles.header}>
-      <h1 className={`${styles.logo} text-center`}>Hayoung</h1>
+      <h1 className={`${styles.logo} text-center`}>
+        <Link href="/">Hayoung</Link>
+      </h1>
       <nav className={styles.nav}>
         <ul>
           <li>
