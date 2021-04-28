@@ -1,20 +1,21 @@
 import "../styles/globals.css";
 import Layout from "../components/layout";
-import { useEffect, useState } from "react";
+import { useEffect, useReducer } from "react";
 import { useRouter } from "next/router";
+import { initialState, reducer, GlobalContext } from "../utils/store";
 
 function MyApp({ Component, pageProps }) {
+  // TODO: redux like state management system using useContext and useReducer
+  // https://medium.com/@martin.crabtree/react-creating-a-redux-like-global-state-with-the-usecontext-and-usereducer-hooks-89aa2b27dbc5
+  // https://albertyuebaixu.medium.com/how-to-use-hooks-usecontext-usereducer-to-replace-redux-58b1b176abfe
   // leftNav
-  const [curSteps, setCurSteps] = useState<string[]>([]);
-
+  const [state, dispatch] = useReducer(reducer, initialState);
   const router = useRouter();
-
   useEffect(() => {
     const handleRouteChange = (toUrl, { shallow }) => {
       const tutorialPage = /^\/tutorials\/.+/;
-      console.log(toUrl, toUrl.match(tutorialPage));
       if (!toUrl.match(tutorialPage)) {
-        setCurSteps([]);
+        dispatch({ type: `resetSteps` });
       }
     };
 
@@ -25,9 +26,11 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <Layout curSteps={curSteps}>
-      <Component {...pageProps} setCurSteps={setCurSteps} />
-    </Layout>
+    <GlobalContext.Provider value={[state, dispatch]}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </GlobalContext.Provider>
   );
 }
 

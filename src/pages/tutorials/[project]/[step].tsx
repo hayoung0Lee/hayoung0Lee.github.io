@@ -2,7 +2,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { readFilesForThisPage, getPath, readFile } from "../../../utils/common";
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
+import { GlobalContext } from "../../../utils/store";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tutorialPath = getPath("tutorials");
@@ -39,9 +40,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 // Optional catch all routes
-const Tutorials = ({ project, step, curTutorialList, setCurSteps }) => {
+const Tutorials = ({ project, step, curTutorialList }) => {
+  const [_, dispatch] = useContext(GlobalContext);
+
   useEffect(() => {
-    setCurSteps([project, ...curTutorialList]);
+    dispatch({ type: `setSteps`, payload: [project, ...curTutorialList] });
   }, []);
 
   return (

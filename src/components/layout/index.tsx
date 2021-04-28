@@ -1,28 +1,27 @@
-import { FC, ReactChild, useEffect } from "react";
+import { FC, ReactChild, useEffect, useContext } from "react";
 import styles from "./layout.module.css";
 import Header from "../header";
 import Link from "next/link";
+import { GlobalContext } from "../../utils/store";
 
 interface Props {
   children: ReactChild;
-  curSteps: any;
 }
 
-const Layout: FC<Props> = ({ children, curSteps }) => {
-  useEffect(() => {
-    console.log("layout reset", curSteps);
-  }, [curSteps]);
+const Layout: FC<Props> = ({ children }) => {
+  const [{ cursteps }] = useContext(GlobalContext);
+  console.log(cursteps);
   return (
     <div className={styles.layout}>
       <Header />
-      {curSteps?.length > 0 ? (
+      {cursteps?.length > 0 ? (
         <main className={`${styles.main} ${styles.tutorialMain}`}>
           <nav>
             <ul>
-              {curSteps?.slice(1).map((f, index) => {
+              {cursteps?.slice(1).map((f, index) => {
                 return (
                   <li className={"listStyle"} key={index}>
-                    <Link href={`/tutorials/${curSteps[0]}/${f.slice(0, -3)}`}>
+                    <Link href={`/tutorials/${cursteps[0]}/${f.slice(0, -3)}`}>
                       <a className={"linkStyle"}>{f}</a>
                     </Link>
                   </li>
