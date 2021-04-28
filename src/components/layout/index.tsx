@@ -10,7 +10,7 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }) => {
   const [{ cursteps }] = useContext(GlobalContext);
-  console.log(cursteps);
+
   return (
     <div className={styles.layout}>
       <Header />
