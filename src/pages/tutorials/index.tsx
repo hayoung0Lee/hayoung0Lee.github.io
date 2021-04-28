@@ -24,7 +24,7 @@ const Tutorials = ({ tutorialList }) => {
       </Head>
       <div>
         <h2>My tutorials</h2>
-        <ul>
+        <ul className={"index"}>
           {tutorialList.map((f, index) => {
             return (
               <li className={"listStyle"} key={index}>

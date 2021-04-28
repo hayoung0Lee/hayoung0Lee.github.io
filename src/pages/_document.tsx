@@ -20,6 +20,7 @@ class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
+        {/* <script src="/blog.js"></script> */}
       </Html>
     );
   }

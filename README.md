@@ -55,4 +55,5 @@ npm install -g @aws-amplify/cli
 - next js & redux exmaple: https://github.com/vercel/next.js/tree/canary/examples/with-redux
 
 - https://github.com/markedjs/marked
+- highlight.js : https://github.com/highlightjs/highlight.js/#supported-languages
  -->

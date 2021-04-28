@@ -7,11 +7,8 @@ import MdViewer from "../../components/md-viewer";
 import hljs from "highlight.js/lib/core";
 import javascript from "highlight.js/lib/languages/javascript";
 
-// https://github.com/vercel/next.js/issues/14886
-// All falsy values passed into getStaticPaths result in the omission of the variable from params.
-// 이렇게 정리할 수 있도록 하기:https://github.com/SOMJANG/CODINGTEST_PRACTICE
 export const getStaticPaths: GetStaticPaths = async () => {
-  const postPath = getPath("leetcode");
+  const postPath = getPath("blog");
   const fileList = await readFilesForThisPage(postPath);
 
   const paths = [
@@ -32,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (!params.slug) {
-    const postPath = getPath("leetcode");
+    const postPath = getPath("blog");
     const fileList = await readFilesForThisPage(postPath);
     return {
       props: {
@@ -42,7 +39,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     };
   }
 
-  const postPath = getPath(`leetcode/${params.slug}.md`);
+  const postPath = getPath(`blog/${params.slug}.md`);
   const fileContent = await readFile(postPath);
 
   // markdown
@@ -80,22 +77,22 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 // Optional catch all routes
-const LeetCode = ({ slug, fileList, fileContent }) => {
+const Blog = ({ slug, fileList, fileContent }) => {
   if (slug === null) {
     // index page
     return (
       <div>
         <Head>
-          <title>Hayoung's leetcode</title>
+          <title>Hayoung's Blog</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <div>
-          <h2>I'm using LeetCode to enhance my algorithm skills</h2>
+          <h2>Just Random Blog Posts</h2>
           <ul className={"index"}>
             {fileList.map((f, index) => {
               return (
                 <li className={"listStyle"} key={index}>
-                  <Link href={`/leetcode/${f.slice(0, -3)}`}>
+                  <Link href={`/blog/${f.slice(0, -3)}`}>
                     <a className={"linkStyle"}>{f}</a>
                   </Link>
                 </li>
@@ -111,7 +108,7 @@ const LeetCode = ({ slug, fileList, fileContent }) => {
   return (
     <div>
       <Head>
-        <title>Hayoung's leetcode</title>
+        <title>Hayoung's Blog Post</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
@@ -121,4 +118,4 @@ const LeetCode = ({ slug, fileList, fileContent }) => {
   );
 };
 
-export default LeetCode;
+export default Blog;

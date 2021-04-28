@@ -1,0 +1,18 @@
+.mdViewer h1 {
+    margin-bottom: 30px;
+}
+
+.mdViewer * {
+    margin-bottom: 25px;
+}
+
+.mdViewer code{
+    padding: 16px;
+    border-radius: 6px;
+    background-color: #f6f8fa;
+}
+
+.mdViewer ul{
+    padding-top: 15px;
+    padding-left: 20px;
+}

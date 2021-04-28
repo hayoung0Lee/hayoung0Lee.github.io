@@ -7,7 +7,7 @@ const Home = () => {
         <title>Hayoung's Blog</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>main</div>
+      <div>Welcome! I'm still developing this blog site</div>
     </div>
   );
 };

@@ -27,7 +27,7 @@ const Layout: FC<Props> = ({ children }) => {
                 return (
                   <li className={"listStyle"} key={index}>
                     <Link href={`/tutorials/${cursteps[0]}/${f.slice(0, -3)}`}>
-                      <a className={"linkStyle"}>{f.slice(0, -3)}</a>
+                      <a className={"linkStyle"}>Step {+f.slice(0, -3) + 1}</a>
                     </Link>
                   </li>
                 );

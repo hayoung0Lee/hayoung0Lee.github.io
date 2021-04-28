@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../components/md-viewer/mdviewer.css";
 import Layout from "../components/layout";
 import { useEffect, useReducer } from "react";
 import { useRouter } from "next/router";

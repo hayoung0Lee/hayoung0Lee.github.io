@@ -4,6 +4,10 @@ import { GetStaticProps, GetStaticPaths } from "next";
 import { readFilesForThisPage, getPath, readFile } from "../../../utils/common";
 import { useEffect, useContext } from "react";
 import { GlobalContext } from "../../../utils/store";
+import marked from "marked";
+import MdViewer from "../../../components/md-viewer";
+import hljs from "highlight.js/lib/core";
+import javascript from "highlight.js/lib/languages/javascript";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const tutorialPath = getPath("tutorials");
@@ -33,12 +37,39 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     `tutorials/${params.project}/${params.step}.md`
   );
   const curTutorialContents = await readFile(curTutorialContentsPath);
+
+  // markdown
+  hljs.registerLanguage("javascript", javascript);
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    highlight: function (code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : "plaintext";
+      return hljs.highlight(code, { language }).value;
+    },
+    baseUrl: null,
+    breaks: false,
+    gfm: true,
+    headerIds: true,
+    headerPrefix: "",
+    langPrefix: "language-",
+    mangle: true,
+    pedantic: false,
+    sanitize: false,
+    sanitizer: null,
+    silent: false,
+    smartLists: false,
+    smartypants: false,
+    tokenizer: null,
+    walkTokens: null,
+    xhtml: false,
+  });
+
   return {
     props: {
       project: params.project,
       step: params.step,
       curTutorialList, // 목차
-      curTutorialContents, // 내용
+      curTutorialContents: marked(curTutorialContents), // 내용
     },
   };
 };
@@ -58,10 +89,7 @@ const Tutorials = ({ project, step, curTutorialList, curTutorialContents }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={"tutorialStep"}>
-        <h1>
-          Tutorials {project} - step {step}
-        </h1>
-        <section>{curTutorialContents}</section>
+        <MdViewer>{curTutorialContents}</MdViewer>
       </div>
     </div>
   );

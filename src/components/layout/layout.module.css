@@ -6,6 +6,7 @@
 
 .main {
   padding: var(--layout-padding);
+  padding-top: 15px;
   border-top: 1px solid #e5e7eb;
   border-bottom: 1px solid #e5e7eb;
 }
@@ -13,6 +14,10 @@
 .tutorialMain {
   padding: 0;
   display: flex;
+}
+
+.tutorialMain section{
+  padding-top: 15px;
 }
 
 .tutorialMain nav {
