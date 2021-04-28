@@ -11,13 +11,19 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul>
           <li>
-            <CustomLink href="/" route={`Home`} />
+            <CustomLink href="/blog" route={`Blog`} />
           </li>
           <li>
             <CustomLink href="/tutorials" route={`Tutorials`} />
           </li>
           <li>
             <CustomLink href="/leetcode" route={`Leetcode`} />
+          </li>
+          <li>
+            <CustomLink href="/customNotion" route={`CustomNotion`} />
+          </li>
+          <li>
+            <CustomLink href="/contact" route={`Contact`} />
           </li>
         </ul>
       </nav>

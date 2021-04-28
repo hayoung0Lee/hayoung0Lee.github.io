@@ -1,7 +1,7 @@
 .layout {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: max-content auto minmax(200px, max-content);
+  grid-template-rows: max-content auto minmax(130px, max-content);
 }
 
 .main {
