@@ -1,12 +1,11 @@
 import Head from "next/head";
 import Link from "next/link";
-import {
-  GetStaticProps,
-  GetStaticPaths,
-  GetServerSideProps,
-  GetStaticPropsContext,
-} from "next";
+import { GetStaticProps, GetStaticPaths } from "next";
 import { readFilesForThisPage, getPath, readFile } from "../../utils/common";
+import marked from "marked";
+import MdViewer from "../../components/md-viewer";
+import hljs from "highlight.js/lib/core";
+import javascript from "highlight.js/lib/languages/javascript";
 
 // https://github.com/vercel/next.js/issues/14886
 // All falsy values passed into getStaticPaths result in the omission of the variable from params.
@@ -45,10 +44,28 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const postPath = getPath(`leetcode/${params.slug}.md`);
   const fileContent = await readFile(postPath);
+
+  // markdown
+  hljs.registerLanguage("javascript", javascript);
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    highlight: function (code, lang) {
+      const language = hljs.getLanguage(lang) ? lang : "plaintext";
+      return hljs.highlight(code, { language }).value;
+    },
+    pedantic: false,
+    gfm: true,
+    breaks: false,
+    sanitize: false,
+    smartLists: true,
+    smartypants: false,
+    xhtml: false,
+  });
+
   return {
     props: {
       slug: params.slug,
-      fileContent,
+      fileContent: marked(fileContent),
     },
   };
 };
@@ -90,7 +107,7 @@ const LeetCode = ({ slug, fileList, fileContent }) => {
       </Head>
       <div>
         <h2>It is {slug}</h2>
-        <div>{fileContent}</div>
+        <MdViewer>{fileContent}</MdViewer>
       </div>
     </div>
   );
