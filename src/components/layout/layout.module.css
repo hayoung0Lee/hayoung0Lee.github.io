@@ -11,20 +11,19 @@
 }
 
 .tutorialMain {
-  background-color: green;
   padding: 0;
   display: flex;
 }
 
 .tutorialMain nav {
-  width: 130px;
+  width: 150px;
   border-right: 1px solid #e5e7eb;
-  background-color: azure;
+  margin-right: 20px;
 }
 
 .tutorialMain nav li a {
   padding-left: 20px;
-  border: 1px solid black;
+  border-bottom: 2px solid #e5e7eb;
 }
 
 .footer {

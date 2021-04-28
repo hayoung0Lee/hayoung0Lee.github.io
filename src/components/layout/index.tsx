@@ -18,11 +18,16 @@ const Layout: FC<Props> = ({ children }) => {
         <main className={`${styles.main} ${styles.tutorialMain}`}>
           <nav>
             <ul>
+              <li className={"listStyle"}>
+                <Link href={`/tutorials`}>
+                  <a className={"linkStyle"}>{"<"} Back</a>
+                </Link>
+              </li>
               {cursteps?.slice(1).map((f, index) => {
                 return (
                   <li className={"listStyle"} key={index}>
                     <Link href={`/tutorials/${cursteps[0]}/${f.slice(0, -3)}`}>
-                      <a className={"linkStyle"}>{f}</a>
+                      <a className={"linkStyle"}>{f.slice(0, -3)}</a>
                     </Link>
                   </li>
                 );

@@ -29,18 +29,22 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const curTutorialPaths = getPath(`tutorials/${params.project}`);
   const curTutorialList = await readFilesForThisPage(curTutorialPaths);
-
+  const curTutorialContentsPath = getPath(
+    `tutorials/${params.project}/${params.step}.md`
+  );
+  const curTutorialContents = await readFile(curTutorialContentsPath);
   return {
     props: {
       project: params.project,
       step: params.step,
-      curTutorialList,
+      curTutorialList, // 목차
+      curTutorialContents, // 내용
     },
   };
 };
 
 // Optional catch all routes
-const Tutorials = ({ project, step, curTutorialList }) => {
+const Tutorials = ({ project, step, curTutorialList, curTutorialContents }) => {
   const [_, dispatch] = useContext(GlobalContext);
 
   useEffect(() => {
@@ -53,8 +57,11 @@ const Tutorials = ({ project, step, curTutorialList }) => {
         <title>Hayoung's Tutorials - {project}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div>
-        Tutorials {project} - step {step}
+      <div className={"tutorialStep"}>
+        <h1>
+          Tutorials {project} - step {step}
+        </h1>
+        <section>{curTutorialContents}</section>
       </div>
     </div>
   );
