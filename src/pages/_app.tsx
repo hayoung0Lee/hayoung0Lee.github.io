@@ -4,6 +4,9 @@ import Layout from "../components/layout";
 import { useEffect, useReducer } from "react";
 import { useRouter } from "next/router";
 import { initialState, reducer, GlobalContext } from "../utils/store";
+import { Amplify, withSSRContext, API } from "aws-amplify";
+import awsExports from "../aws-exports";
+Amplify.configure({ ...awsExports, ssr: true });
 
 function MyApp({ Component, pageProps }) {
   // TODO: redux like state management system using useContext and useReducer

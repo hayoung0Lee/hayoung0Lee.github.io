@@ -6,6 +6,9 @@ This project is using Next.js to make a github blog template. Anyone who are int
 
 - Next.js
 - TypeScript
+- Amplify
+- redux
+- redux-saga
 
 # How I developed this website
 
@@ -30,6 +33,7 @@ npm install -g @aws-amplify/cli
 - https://medium.com/@kendallstrautman/creating-a-markdown-blog-with-next-js-aa44f762ea34
 - [aws loves Next.js - great article](https://blog.bitsrc.io/why-aws-love-next-js-1f7b6491857)
 - [Amplify docs - JavaScript GraphQl](https://docs.amplify.aws/lib/graphqlapi/query-data/q/platform/js)
+- [autogenerate ID Field](https://egghead.io/lessons/graphql-autogenerate-an-id-field-in-graphql-with-appsync-resolvers)
 
 # LICENSE
 

@@ -3,6 +3,8 @@ import styles from "./layout.module.css";
 import Header from "../header";
 import Link from "next/link";
 import { GlobalContext } from "../../utils/store";
+import NotionNav from "../notion-nav/index";
+import { useRouter } from "next/router";
 
 interface Props {
   children: ReactChild;
@@ -10,7 +12,8 @@ interface Props {
 
 const Layout: FC<Props> = ({ children }) => {
   const [{ cursteps }] = useContext(GlobalContext);
-
+  const router = useRouter();
+  // console.log(router);
   return (
     <div className={styles.layout}>
       <Header />
@@ -37,7 +40,12 @@ const Layout: FC<Props> = ({ children }) => {
           <section>{children}</section>
         </main>
       ) : (
-        <main className={styles.main}>{children}</main>
+        <>
+          <main className={styles.main}>
+            <NotionNav />
+            {children}
+          </main>
+        </>
       )}
       <footer className={styles.footer}>footer</footer>
     </div>
