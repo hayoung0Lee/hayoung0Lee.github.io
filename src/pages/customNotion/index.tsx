@@ -36,7 +36,7 @@ Amplify.configure({ ...awsExports, ssr: true });
 
 const CustomNotion = () => {
   const callSomething = async () => {
-    const allTodos = await API.graphql({ query: queries.listTodos });
+    const allTodos = await API.graphql({ query: queries.listPosts });
     console.log(allTodos);
   };
 
@@ -47,7 +47,7 @@ const CustomNotion = () => {
   return (
     <div>
       <Head>
-        <title>Hayoung's Blog</title>
+        <title>Hayoung's Notion</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>CustomNotion</div>
