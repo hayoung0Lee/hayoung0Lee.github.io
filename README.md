@@ -16,9 +16,10 @@ npm install -g @aws-amplify/cli
 
 # Main features
 
-- github action to deploy this blog
-
-- [amplify](https://docs.amplify.aws/)
+- MarkDown Features
+  - Tutorials, LeetCode Page
+- Clone Notion
+  - CustomNotion Page
 
 # Reference
 
