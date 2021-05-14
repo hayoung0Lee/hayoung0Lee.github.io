@@ -36,6 +36,7 @@ yarn-error.log*
 
 # mac
 .DS_Store
+.vscode
 
 #amplify
 amplify/\#current-cloud-backend
