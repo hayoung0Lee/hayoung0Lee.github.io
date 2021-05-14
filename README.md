@@ -28,6 +28,8 @@ npm install -g @aws-amplify/cli
 - [AST](https://gyujincho.github.io/2018-06-19/AST-for-JS-devlopers)
 - https://nextjs.org/blog/markdown
 - https://medium.com/@kendallstrautman/creating-a-markdown-blog-with-next-js-aa44f762ea34
+- [aws loves Next.js - great article](https://blog.bitsrc.io/why-aws-love-next-js-1f7b6491857)
+- [Amplify docs - JavaScript GraphQl](https://docs.amplify.aws/lib/graphqlapi/query-data/q/platform/js)
 
 # LICENSE
 
