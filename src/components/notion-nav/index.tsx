@@ -4,6 +4,8 @@ import * as queries from "../../graphql/queries";
 import * as subscriptions from "../../graphql/subscriptions";
 import * as mutations from "../../graphql/mutations";
 import Link from "next/link";
+import styles from "./nav.module.css";
+import { FaRegFileAlt } from "react-icons/fa";
 
 const NotionNav = () => {
   const [posts, setPosts] = useState<any>([]);
@@ -41,18 +43,23 @@ const NotionNav = () => {
   }, []);
 
   return (
-    <>
+    <nav className={styles.nav}>
       <ul>
         {posts?.map((p, index) => {
           return (
-            <div key={index}>
-              <Link href={`/customNotion/${p.id}`}>{p.id}</Link>
+            <div className={styles.page} key={index}>
+              <>
+                <FaRegFileAlt />
+                <Link href={`/customNotion/${p.id}`}>{`page${index}`}</Link>
+              </>
             </div>
           );
         })}
+        <div className={styles.page}>
+          <button onClick={addPost}>Add a Page</button>
+        </div>
       </ul>
-      <button onClick={addPost}>add</button>
-    </>
+    </nav>
   );
 };
 

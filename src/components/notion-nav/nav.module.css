@@ -1,0 +1,20 @@
+.nav {
+  position: absolute;
+  background-color: red;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  width: 200px;
+  background-color: rgb(247, 246, 243);
+  padding-top: 20px;
+}
+
+.page {
+  padding: 5px;
+  margin-left: 20px;
+  /* cursor: pointer; */
+}
+
+.page:last-child button {
+  padding: 5px;
+}

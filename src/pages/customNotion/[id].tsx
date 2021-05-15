@@ -2,6 +2,7 @@ import { Amplify, withSSRContext, API } from "aws-amplify";
 import * as queries from "../../graphql/queries";
 import type { GetStaticProps, GetStaticPaths } from "next";
 import { useRouter } from "next/router";
+import NotionNav from "../../components/notion-nav";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const SSR = withSSRContext();
@@ -40,7 +41,20 @@ const Post = ({ post }) => {
   }
   return (
     <>
-      <div>post: {post.id}</div>
+      <NotionNav />
+      <div
+        style={{
+          position: "absolute",
+          left: `200px`,
+          right: 0,
+          // backgroundColor: "red",
+          border: `1px solid black`,
+          top: 0,
+          minHeight: "100%",
+        }}
+      >
+        post: {post.id}
+      </div>
     </>
   );
 };

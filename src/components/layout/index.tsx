@@ -3,7 +3,6 @@ import styles from "./layout.module.css";
 import Header from "../header";
 import Link from "next/link";
 import { GlobalContext } from "../../utils/store";
-import NotionNav from "../notion-nav/index";
 import { useRouter } from "next/router";
 
 interface Props {
@@ -41,10 +40,7 @@ const Layout: FC<Props> = ({ children }) => {
         </main>
       ) : (
         <>
-          <main className={styles.main}>
-            <NotionNav />
-            {children}
-          </main>
+          <main className={styles.main}>{children}</main>
         </>
       )}
       <footer className={styles.footer}>footer</footer>

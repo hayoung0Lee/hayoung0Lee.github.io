@@ -7,8 +7,10 @@ This project is using Next.js to make a github blog template. Anyone who are int
 - Next.js
 - TypeScript
 - Amplify
-- redux
+- [react-icon](https://react-icons.github.io/react-icons)
+<!-- - redux
 - redux-saga
+- next-redux-wrapper -->
 
 # How I developed this website
 
@@ -34,6 +36,8 @@ npm install -g @aws-amplify/cli
 - [aws loves Next.js - great article](https://blog.bitsrc.io/why-aws-love-next-js-1f7b6491857)
 - [Amplify docs - JavaScript GraphQl](https://docs.amplify.aws/lib/graphqlapi/query-data/q/platform/js)
 - [autogenerate ID Field](https://egghead.io/lessons/graphql-autogenerate-an-id-field-in-graphql-with-appsync-resolvers)
+- [react state](https://www.loginradius.com/blog/async/react-state-management/#:~:text=What%20is%20React%20State%20Management,for%20a%20JavaScript%20data%20structure.)
+- [clone notion](https://github.com/tobi4120/notion-clone)
 
 # LICENSE
 
@@ -63,4 +67,7 @@ npm install -g @aws-amplify/cli
 
 - https://github.com/markedjs/marked
 - highlight.js : https://github.com/highlightjs/highlight.js/#supported-languages
+
+
+- https://github.com/konstantinmuenster/notion-clone
  -->
