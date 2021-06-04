@@ -38,7 +38,8 @@ npm install -g @aws-amplify/cli
 - [autogenerate ID Field](https://egghead.io/lessons/graphql-autogenerate-an-id-field-in-graphql-with-appsync-resolvers)
 - [react state](https://www.loginradius.com/blog/async/react-state-management/#:~:text=What%20is%20React%20State%20Management,for%20a%20JavaScript%20data%20structure.)
 - [clone notion](https://github.com/tobi4120/notion-clone)
-
+- [Change browser URL (window.location) without reloading or redirecting a page](https://kipid.tistory.com/entry/Change-browser-URL-without-reloading-a-page)
+- [Host a Next.js SSR app with real-time data on AWS Amplify](https://aws.amazon.com/ko/blogs/mobile/host-a-next-js-ssr-app-with-real-time-data-on-aws-amplify/?fbclid=IwAR2EYN4-28Yph2z9lXLg4Md1LrTsg4whTgvBUt6Dz6a-X454uQkcK8zFWnI)
 # LICENSE
 
 <!--
